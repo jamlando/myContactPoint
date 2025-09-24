@@ -52,7 +52,11 @@ struct OnboardingTutorialView: View {
                         .tag(index)
                 }
             }
-            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            #if os(iOS)
+            .tabViewStyle(.page(indexDisplayMode: .never))
+            #else
+            .tabViewStyle(.automatic)
+            #endif
             
             // Custom page indicator
             HStack(spacing: 8) {
@@ -107,7 +111,9 @@ struct OnboardingTutorialView: View {
             }
             .padding(.horizontal)
         }
-        .navigationBarHidden(true)
+        #if os(iOS)
+        .toolbar(.hidden, for: .navigationBar)
+        #endif
     }
 }
 

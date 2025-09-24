@@ -1,0 +1,40 @@
+{
+  "": {
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/master.swiftdeps"
+  },
+  "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/ContentView.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/ContentView.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/ContentView.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/ContentView.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/ContentView.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/LogoView.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/LogoView.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/LogoView.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/LogoView~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/LogoView.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/LogoView.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/MyContactPointApp.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/MyContactPointApp.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/MyContactPointApp.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/MyContactPointApp~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/MyContactPointApp.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/MyContactPointApp.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/OnboardingTutorialView.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/OnboardingTutorialView.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/OnboardingTutorialView.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/OnboardingTutorialView~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/OnboardingTutorialView.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/OnboardingTutorialView.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/SplashScreenView.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.dia"
+  }
+}

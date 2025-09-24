@@ -1,0 +1,4 @@
+module phlibwebp {
+    umbrella "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/vendor/libwebp"
+    export *
+}

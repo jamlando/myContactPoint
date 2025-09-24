@@ -5,7 +5,7 @@ let package = Package(
     name: "MyContactPoint",
     platforms: [
         .iOS(.v15),
-        .macOS(.v10_15)
+        .macOS(.v11)
     ],
     products: [
         .executable(

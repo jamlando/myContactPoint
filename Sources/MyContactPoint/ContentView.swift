@@ -74,7 +74,9 @@ struct HomeView: View {
             }
             .padding()
             .navigationTitle("Home")
-            .navigationBarHidden(true)
+            #if os(iOS)
+            .toolbar(.hidden, for: .navigationBar)
+            #endif
         }
     }
 }

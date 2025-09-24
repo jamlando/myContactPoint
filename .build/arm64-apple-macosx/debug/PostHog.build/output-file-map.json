@@ -1,0 +1,789 @@
+{
+  "": {
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/master.swiftdeps"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/App Life Cycle/ApplicationLifecyclePublisher.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationLifecyclePublisher.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationLifecyclePublisher.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationLifecyclePublisher~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationLifecyclePublisher.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationLifecyclePublisher.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/App Life Cycle/PostHogAppLifeCycleIntegration.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAppLifeCycleIntegration.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAppLifeCycleIntegration.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAppLifeCycleIntegration~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAppLifeCycleIntegration.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAppLifeCycleIntegration.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/ApplicationViewLayoutPublisher.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationViewLayoutPublisher.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationViewLayoutPublisher.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationViewLayoutPublisher~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationViewLayoutPublisher.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationViewLayoutPublisher.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Autocapture/AutocaptureEventProcessing.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/AutocaptureEventProcessing.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/AutocaptureEventProcessing.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/AutocaptureEventProcessing~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/AutocaptureEventProcessing.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/AutocaptureEventProcessing.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Autocapture/ForwardingPickerViewDelegate.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ForwardingPickerViewDelegate.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ForwardingPickerViewDelegate.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ForwardingPickerViewDelegate~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ForwardingPickerViewDelegate.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ForwardingPickerViewDelegate.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Autocapture/PostHogAutocaptureEventTracker.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAutocaptureEventTracker.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAutocaptureEventTracker.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAutocaptureEventTracker~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAutocaptureEventTracker.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAutocaptureEventTracker.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Autocapture/PostHogAutocaptureIntegration.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAutocaptureIntegration.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAutocaptureIntegration.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAutocaptureIntegration~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAutocaptureIntegration.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogAutocaptureIntegration.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Autocapture/SwiftUI/View+PostHogLabel.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/View+PostHogLabel.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/View+PostHogLabel.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/View+PostHogLabel~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/View+PostHogLabel.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/View+PostHogLabel.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Autocapture/UIView+PostHogLabel.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIView+PostHogLabel.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIView+PostHogLabel.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIView+PostHogLabel~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIView+PostHogLabel.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIView+PostHogLabel.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/DI.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DI.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DI.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DI~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DI.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DI.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Models/PostHogEvent.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogEvent.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogEvent.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogEvent.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogEvent.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Models/Surveys/PostHogSurvey+Display.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurvey+Display.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurvey+Display.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurvey+Display~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurvey+Display.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurvey+Display.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Models/Surveys/PostHogSurvey.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurvey.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurvey.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurvey~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurvey.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurvey.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Models/Surveys/PostHogSurveyAppearance.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyAppearance.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyAppearance.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyAppearance~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyAppearance.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyAppearance.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Models/Surveys/PostHogSurveyConditions.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyConditions.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyConditions.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyConditions~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyConditions.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyConditions.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Models/Surveys/PostHogSurveyEnums.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyEnums.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyEnums.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyEnums~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyEnums.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyEnums.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Models/Surveys/PostHogSurveyQuestion.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyQuestion.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyQuestion.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyQuestion~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyQuestion.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyQuestion.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogApi.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogApi.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogApi.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogApi~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogApi.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogApi.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogBatchUploadInfo.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogBatchUploadInfo.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogBatchUploadInfo.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogBatchUploadInfo~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogBatchUploadInfo.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogBatchUploadInfo.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogConfig.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConfig.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConfig.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConfig~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConfig.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConfig.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogConsumerPayload.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConsumerPayload.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConsumerPayload.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConsumerPayload~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConsumerPayload.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConsumerPayload.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogContext.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogContext.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogContext.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogContext~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogContext.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogContext.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogExtensions.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogExtensions.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogExtensions.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogExtensions~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogExtensions.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogExtensions.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogFileBackedQueue.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogFileBackedQueue.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogFileBackedQueue.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogFileBackedQueue~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogFileBackedQueue.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogFileBackedQueue.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogIntegration.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogIntegration.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogIntegration.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogIntegration~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogIntegration.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogIntegration.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogLegacyQueue.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLegacyQueue.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLegacyQueue.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLegacyQueue~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLegacyQueue.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLegacyQueue.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogPersonProfiles.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogPersonProfiles.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogPersonProfiles.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogPersonProfiles~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogPersonProfiles.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogPersonProfiles.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogPropertiesSanitizer.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogPropertiesSanitizer.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogPropertiesSanitizer.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogPropertiesSanitizer~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogPropertiesSanitizer.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogPropertiesSanitizer.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogQueue.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogQueue.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogQueue.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogQueue~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogQueue.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogQueue.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogRemoteConfig.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogRemoteConfig.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogRemoteConfig.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogRemoteConfig~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogRemoteConfig.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogRemoteConfig.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogSDK.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSDK.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSDK.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSDK~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSDK.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSDK.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogSessionManager.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionManager.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionManager.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionManager.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionManager.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogStorage.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogStorage.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogStorage.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogStorage~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogStorage.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogStorage.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogStorageManager.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogStorageManager.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogStorageManager.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogStorageManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogStorageManager.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogStorageManager.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogSwizzler.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSwizzler.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSwizzler.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSwizzler~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSwizzler.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSwizzler.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/PostHogVersion.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogVersion.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogVersion.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogVersion~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogVersion.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogVersion.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/ApplicationEventPublisher.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationEventPublisher.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationEventPublisher.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationEventPublisher~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationEventPublisher.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationEventPublisher.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/CGColor+Util.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/CGColor+Util.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/CGColor+Util.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/CGColor+Util~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/CGColor+Util.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/CGColor+Util.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/CGSize+Util.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/CGSize+Util.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/CGSize+Util.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/CGSize+Util~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/CGSize+Util.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/CGSize+Util.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/Date+Util.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Date+Util.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Date+Util.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Date+Util~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Date+Util.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Date+Util.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/Float+Util.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Float+Util.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Float+Util.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Float+Util~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Float+Util.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Float+Util.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/MethodSwizzler.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/MethodSwizzler.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/MethodSwizzler.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/MethodSwizzler~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/MethodSwizzler.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/MethodSwizzler.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/NetworkSample.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/NetworkSample.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/NetworkSample.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/NetworkSample~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/NetworkSample.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/NetworkSample.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/Optional+Util.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Optional+Util.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Optional+Util.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Optional+Util~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Optional+Util.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Optional+Util.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/Plugins/Console Logs/PostHogConsoleLogInterceptor.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConsoleLogInterceptor.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConsoleLogInterceptor.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConsoleLogInterceptor~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConsoleLogInterceptor.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogConsoleLogInterceptor.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/Plugins/Console Logs/PostHogLogEntry.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLogEntry.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLogEntry.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLogEntry~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLogEntry.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLogEntry.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/Plugins/Console Logs/PostHogLogLevel.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLogLevel.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLogLevel.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLogLevel~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLogLevel.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogLogLevel.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/Plugins/Console Logs/PostHogSessionReplayConsoleLogsPlugin.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConsoleLogsPlugin.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConsoleLogsPlugin.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConsoleLogsPlugin~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConsoleLogsPlugin.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConsoleLogsPlugin.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/Plugins/Network/PostHogSessionReplayNetworkPlugin.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayNetworkPlugin.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayNetworkPlugin.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayNetworkPlugin~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayNetworkPlugin.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayNetworkPlugin.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/Plugins/Network/URLSessionExtension.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionExtension.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionExtension.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionExtension~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionExtension.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionExtension.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/Plugins/Network/URLSessionInterceptor.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionInterceptor.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionInterceptor.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionInterceptor~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionInterceptor.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionInterceptor.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/Plugins/Network/URLSessionSwizzler.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionSwizzler.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionSwizzler.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionSwizzler~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionSwizzler.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/URLSessionSwizzler.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/Plugins/PostHogSessionReplayPlugin.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayPlugin.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayPlugin.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayPlugin~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayPlugin.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayPlugin.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/PostHogReplayIntegration.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogReplayIntegration.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogReplayIntegration.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogReplayIntegration~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogReplayIntegration.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogReplayIntegration.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/PostHogSessionReplayConfig.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConfig.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConfig.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConfig~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConfig.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConfig.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/PostHogSessionReplayConsoleLogConfig.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConsoleLogConfig.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConsoleLogConfig.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConsoleLogConfig~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConsoleLogConfig.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSessionReplayConsoleLogConfig.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/RRStyle.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/RRStyle.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/RRStyle.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/RRStyle~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/RRStyle.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/RRStyle.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/RRWireframe.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/RRWireframe.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/RRWireframe.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/RRWireframe~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/RRWireframe.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/RRWireframe.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/String+Util.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/String+Util.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/String+Util.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/String+Util~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/String+Util.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/String+Util.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/UIColor+Util.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIColor+Util.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIColor+Util.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIColor+Util~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIColor+Util.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIColor+Util.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/UIImage+Util.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIImage+Util.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIImage+Util.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIImage+Util~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIImage+Util.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIImage+Util.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/UITextInputTraits+Util.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UITextInputTraits+Util.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UITextInputTraits+Util.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UITextInputTraits+Util~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UITextInputTraits+Util.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UITextInputTraits+Util.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/UIView+Util.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIView+Util.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIView+Util.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIView+Util~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIView+Util.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIView+Util.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Replay/ViewTreeSnapshotStatus.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ViewTreeSnapshotStatus.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ViewTreeSnapshotStatus.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ViewTreeSnapshotStatus~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ViewTreeSnapshotStatus.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ViewTreeSnapshotStatus.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Screen Views/ApplicationScreenViewPublisher.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationScreenViewPublisher.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationScreenViewPublisher.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationScreenViewPublisher~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationScreenViewPublisher.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationScreenViewPublisher.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Screen Views/PostHogScreenViewIntegration.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogScreenViewIntegration.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogScreenViewIntegration.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogScreenViewIntegration~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogScreenViewIntegration.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogScreenViewIntegration.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/BottomSection.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/BottomSection.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/BottomSection.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/BottomSection~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/BottomSection.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/BottomSection.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/ConfirmationMessage.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ConfirmationMessage.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ConfirmationMessage.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ConfirmationMessage~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ConfirmationMessage.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ConfirmationMessage.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Models/PostHogDisplaySurvey.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurvey.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurvey.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurvey~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurvey.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurvey.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Models/PostHogDisplaySurveyAppearance.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurveyAppearance.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurveyAppearance.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurveyAppearance~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurveyAppearance.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurveyAppearance.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Models/PostHogDisplaySurveyQuestion.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurveyQuestion.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurveyQuestion.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurveyQuestion~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurveyQuestion.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogDisplaySurveyQuestion.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Models/PostHogNextSurveyQuestion.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogNextSurveyQuestion.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogNextSurveyQuestion.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogNextSurveyQuestion~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogNextSurveyQuestion.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogNextSurveyQuestion.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Models/PostHogSurveyResponse.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyResponse.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyResponse.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyResponse~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyResponse.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyResponse.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/PostHogSurveyIntegration.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyIntegration.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyIntegration.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyIntegration~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyIntegration.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveyIntegration.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/PostHogSurveysConfig.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveysConfig.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveysConfig.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveysConfig~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveysConfig.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveysConfig.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/PostHogSurveysDefaultDelegate.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveysDefaultDelegate.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveysDefaultDelegate.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveysDefaultDelegate~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveysDefaultDelegate.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSurveysDefaultDelegate.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/QuestionHeader.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/QuestionHeader.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/QuestionHeader.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/QuestionHeader~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/QuestionHeader.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/QuestionHeader.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/QuestionTypes.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/QuestionTypes.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/QuestionTypes.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/QuestionTypes~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/QuestionTypes.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/QuestionTypes.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/SurveyDisplayController.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyDisplayController.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyDisplayController.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyDisplayController~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyDisplayController.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyDisplayController.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/SurveySheet.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveySheet.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveySheet.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveySheet~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveySheet.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveySheet.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/SurveysRootView.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveysRootView.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveysRootView.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveysRootView~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveysRootView.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveysRootView.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/SurveysWindow.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveysWindow.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveysWindow.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveysWindow~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveysWindow.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveysWindow.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Utils/EdgeBorder.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/EdgeBorder.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/EdgeBorder.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/EdgeBorder~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/EdgeBorder.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/EdgeBorder.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Utils/EmojiRating.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/EmojiRating.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/EmojiRating.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/EmojiRating~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/EmojiRating.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/EmojiRating.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Utils/MultipleChoiceOptions.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/MultipleChoiceOptions.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/MultipleChoiceOptions.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/MultipleChoiceOptions~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/MultipleChoiceOptions.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/MultipleChoiceOptions.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Utils/NumberRating.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/NumberRating.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/NumberRating.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/NumberRating~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/NumberRating.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/NumberRating.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Utils/Resources.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Resources.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Resources.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Resources~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Resources.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Resources.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Utils/SegmentedControl.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SegmentedControl.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SegmentedControl.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SegmentedControl~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SegmentedControl.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SegmentedControl.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Utils/Survey+Util.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Survey+Util.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Survey+Util.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Survey+Util~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Survey+Util.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Survey+Util.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Utils/SurveyButton.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyButton.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyButton.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyButton~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyButton.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyButton.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Utils/SurveyPresentationDetentsRepresentable.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyPresentationDetentsRepresentable.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyPresentationDetentsRepresentable.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyPresentationDetentsRepresentable~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyPresentationDetentsRepresentable.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SurveyPresentationDetentsRepresentable.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Surveys/Utils/SwiftUI+Util.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SwiftUI+Util.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SwiftUI+Util.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SwiftUI+Util~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SwiftUI+Util.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/SwiftUI+Util.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/SwiftUI/PostHogMaskViewModifier.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogMaskViewModifier.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogMaskViewModifier.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogMaskViewModifier~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogMaskViewModifier.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogMaskViewModifier.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/SwiftUI/PostHogNoMaskViewModifier.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogNoMaskViewModifier.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogNoMaskViewModifier.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogNoMaskViewModifier~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogNoMaskViewModifier.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogNoMaskViewModifier.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/SwiftUI/PostHogSwiftUIViewModifiers.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSwiftUIViewModifiers.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSwiftUIViewModifiers.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSwiftUIViewModifiers~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSwiftUIViewModifiers.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogSwiftUIViewModifiers.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/SwiftUI/PostHogTagViewModifier.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogTagViewModifier.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogTagViewModifier.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogTagViewModifier~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogTagViewModifier.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/PostHogTagViewModifier.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/UIViewController.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIViewController.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIViewController.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIViewController~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIViewController.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIViewController.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/AssociatedKeys.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/AssociatedKeys.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/AssociatedKeys.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/AssociatedKeys~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/AssociatedKeys.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/AssociatedKeys.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/Data+Gzip.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Data+Gzip.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Data+Gzip.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Data+Gzip~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Data+Gzip.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Data+Gzip.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/DateUtils.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DateUtils.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DateUtils.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DateUtils~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DateUtils.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DateUtils.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/DictUtils.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DictUtils.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DictUtils.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DictUtils~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DictUtils.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DictUtils.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/Errors.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Errors.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Errors.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Errors~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Errors.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Errors.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/FileUtils.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/FileUtils.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/FileUtils.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/FileUtils~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/FileUtils.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/FileUtils.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/Hedgelog.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Hedgelog.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Hedgelog.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Hedgelog~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Hedgelog.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Hedgelog.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/Reachability.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Reachability.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Reachability.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Reachability~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Reachability.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/Reachability.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/ReadWriteLock.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ReadWriteLock.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ReadWriteLock.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ReadWriteLock~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ReadWriteLock.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ReadWriteLock.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/TimeBasedEpochGenerator.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/TimeBasedEpochGenerator.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/TimeBasedEpochGenerator.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/TimeBasedEpochGenerator~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/TimeBasedEpochGenerator.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/TimeBasedEpochGenerator.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/UIApplication+.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIApplication+.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIApplication+.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIApplication+~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIApplication+.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIApplication+.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/UIImage+WebP.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIImage+WebP.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIImage+WebP.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIImage+WebP~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIImage+WebP.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIImage+WebP.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/UIWindow+.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIWindow+.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIWindow+.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIWindow+~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIWindow+.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UIWindow+.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/checkouts/posthog-ios/PostHog/Utils/UUIDUtils.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UUIDUtils.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UUIDUtils.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UUIDUtils~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UUIDUtils.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/UUIDUtils.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/DerivedSources/resource_bundle_accessor.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/resource_bundle_accessor.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/resource_bundle_accessor.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/resource_bundle_accessor.dia"
+  }
+}

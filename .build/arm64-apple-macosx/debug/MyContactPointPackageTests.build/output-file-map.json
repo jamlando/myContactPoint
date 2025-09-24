@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointPackageTests.build/master.swiftdeps"
+  },
+  "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointPackageTests.derived/runner.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointPackageTests.build/runner.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointPackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointPackageTests.build/runner.dia"
+  }
+}
