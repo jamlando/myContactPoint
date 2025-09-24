@@ -7,7 +7,7 @@ let package = Package(
         .iOS(.v15)
     ],
     products: [
-        .library(
+        .executable(
             name: "MyContactPoint",
             targets: ["MyContactPoint"]
         ),
@@ -19,16 +19,18 @@ let package = Package(
         .package(url: "https://github.com/PostHog/posthog-ios.git", from: "3.0.0"),
     ],
     targets: [
-        .target(
+        .executableTarget(
             name: "MyContactPoint",
             dependencies: [
                 .product(name: "Supabase", package: "supabase-swift"),
                 .product(name: "PostHog", package: "posthog-ios"),
-            ]
+            ],
+            path: "Sources/MyContactPoint"
         ),
         .testTarget(
             name: "MyContactPointTests",
-            dependencies: ["MyContactPoint"]
+            dependencies: ["MyContactPoint"],
+            path: "Tests/MyContactPointTests"
         ),
     ]
 )
