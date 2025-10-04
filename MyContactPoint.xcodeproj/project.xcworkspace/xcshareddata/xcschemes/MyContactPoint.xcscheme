@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Project
-   version = "3.0"
-   lastUpgradeCheck = "1500"
-   target = "MyContactPoint">
+<Scheme
+   LastUpgradeVersion = "1500"
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -15,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
+               BlueprintIdentifier = "1D60588C0D05DD3D006BFB54"
                BuildableName = "MyContactPoint.app"
                BlueprintName = "MyContactPoint"
                ReferencedContainer = "container:MyContactPoint.xcodeproj">
@@ -36,7 +35,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
+            BlueprintIdentifier = "1D60588C0D05DD3D006BFB54"
             BuildableName = "MyContactPoint.app"
             BlueprintName = "MyContactPoint"
             ReferencedContainer = "container:MyContactPoint.xcodeproj">
@@ -52,7 +51,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
+            BlueprintIdentifier = "1D60588C0D05DD3D006BFB54"
             BuildableName = "MyContactPoint.app"
             BlueprintName = "MyContactPoint"
             ReferencedContainer = "container:MyContactPoint.xcodeproj">
@@ -66,4 +65,4 @@
       buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
-</Project>
+</Scheme>
