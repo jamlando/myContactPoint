@@ -1,3 +1,0 @@
-module MyContactPoint {
-    header "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/include/MyContactPoint-Swift.h"
-}
