@@ -8,14 +8,51 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var authService = AuthService()
+    @State private var showSplash = true
+    @State private var showTutorial = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            if showSplash {
+                SplashScreenView(showSplash: $showSplash, showTutorial: $showTutorial)
+            } else if showTutorial {
+                OnboardingTutorialView(showTutorial: $showTutorial)
+            } else if authService.isAuthenticated {
+                MainAppView()
+            } else {
+                AuthenticationView()
+            }
         }
-        .padding()
+        .environmentObject(authService)
+        .onAppear {
+            // Check if user is already authenticated
+            Task {
+                await authService.checkAuthStatus()
+            }
+        }
+    }
+}
+
+struct MainAppView: View {
+    @State private var selectedTab = 0
+    
+    var body: some View {
+        TabView(selection: $selectedTab) {
+            CameraView()
+                .tabItem {
+                    Image(systemName: "camera")
+                    Text("Record")
+                }
+                .tag(0)
+            
+            VideoLibraryView()
+                .tabItem {
+                    Image(systemName: "video")
+                    Text("Library")
+                }
+                .tag(1)
+        }
     }
 }
 
