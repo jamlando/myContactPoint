@@ -112,7 +112,7 @@ struct OnboardingTutorialView: View {
             .padding(.horizontal)
         }
         #if os(iOS)
-        .toolbar(.hidden, for: .navigationBar)
+        .navigationBarHidden(true)
         #endif
     }
 }

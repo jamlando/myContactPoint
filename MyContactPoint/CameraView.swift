@@ -136,9 +136,8 @@ struct CameraPreviewView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIView, context: Context) {
-        if let previewLayer = cameraManager.previewLayer {
-            previewLayer.frame = uiView.bounds
-        }
+        let previewLayer = cameraManager.previewLayer
+        previewLayer.frame = uiView.bounds
     }
 }
 #endif

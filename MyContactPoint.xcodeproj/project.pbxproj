@@ -20,6 +20,7 @@
 		1D6058A60D05DD3D006BFB54 /* VideoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058A50D05DD3D006BFB54 /* VideoLibraryView.swift */; };
 		1D6058A80D05DD3D006BFB54 /* VideoUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058A70D05DD3D006BFB54 /* VideoUploadService.swift */; };
 		1D6058AA0D05DD3D006BFB54 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058A90D05DD3D006BFB54 /* AuthenticationView.swift */; };
+		1D6058AC0D05DD3D006BFB54 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6058AB0D05DD3D006BFB54 /* Supabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		1D6058A50D05DD3D006BFB54 /* VideoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryView.swift; sourceTree = "<group>"; };
 		1D6058A70D05DD3D006BFB54 /* VideoUploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUploadService.swift; sourceTree = "<group>"; };
 		1D6058A90D05DD3D006BFB54 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		1D6058AD0D05DD3D006BFB54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D6058B00D05DD3D006BFB54 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D6058AC0D05DD3D006BFB54 /* Supabase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +59,7 @@
 			children = (
 				1D60588F0D05DD3D006BFB54 /* MyContactPoint */,
 				1D60588E0D05DD3D006BFB54 /* Products */,
+				1D6058AF0D05DD3D006BFB55 /* Package Dependencies */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +86,7 @@
 				1D6058A70D05DD3D006BFB54 /* VideoUploadService.swift */,
 				1D6058A90D05DD3D006BFB54 /* AuthenticationView.swift */,
 				1D6058940D05DD3D006BFB54 /* Assets.xcassets */,
+				1D6058AD0D05DD3D006BFB54 /* Info.plist */,
 				1D6058960D05DD3D006BFB54 /* Preview Content */,
 			);
 			path = MyContactPoint;
@@ -94,12 +100,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		1D6058AF0D05DD3D006BFB55 /* Package Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058B00D05DD3D006BFB54 /* Supabase.swift */,
+			);
+			name = "Package Dependencies";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
 		1D60588C0D05DD3D006BFB54 /* MyContactPoint */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058AB0D05DD3D006BFB54 /* Build configuration list for PBXNativeTarget "MyContactPoint" */;
+			buildConfigurationList = 1D6058B30D05DD3D006BFB54 /* Build configuration list for PBXNativeTarget "MyContactPoint" */;
 			buildPhases = (
 				1D6058890D05DD3D006BFB54 /* Sources */,
 				1D60588A0D05DD3D006BFB54 /* Frameworks */,
@@ -110,6 +124,9 @@
 			dependencies = (
 			);
 			name = MyContactPoint;
+			packageProductDependencies = (
+				1D6058AB0D05DD3D006BFB54 /* Supabase */,
+			);
 			productName = MyContactPoint;
 			productReference = 1D60588D0D05DD3D006BFB54 /* MyContactPoint.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +155,9 @@
 				Base,
 			);
 			mainGroup = 1D6058840D05DD3D006BFB54;
+			packageReferences = (
+				1D6058AE0D05DD3D006BFB54 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 1D60588E0D05DD3D006BFB54 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -165,7 +185,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D6058930D05DD3D006BFB54 /* ContentView.swift in Sources */,
-				1D6058910D05DD3D006BFB54 /* MyContactPointApp.swift in Sources */,
 				1D60589A0D05DD3D006BFB54 /* AuthService.swift in Sources */,
 				1D60589C0D05DD3D006BFB54 /* CameraPermissionService.swift in Sources */,
 				1D60589E0D05DD3D006BFB54 /* CameraView.swift in Sources */,
@@ -175,13 +194,14 @@
 				1D6058A60D05DD3D006BFB54 /* VideoLibraryView.swift in Sources */,
 				1D6058A80D05DD3D006BFB54 /* VideoUploadService.swift in Sources */,
 				1D6058AA0D05DD3D006BFB54 /* AuthenticationView.swift in Sources */,
+				1D6058910D05DD3D006BFB54 /* MyContactPointApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1D6058AC0D05DD3D006BFB54 /* Debug */ = {
+		1D6058B10D05DD3D006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -244,7 +264,7 @@
 			};
 			name = Debug;
 		};
-		1D6058AD0D05DD3D006BFB54 /* Release */ = {
+		1D6058B20D05DD3D006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -300,7 +320,7 @@
 			};
 			name = Release;
 		};
-		1D6058AE0D05DD3D006BFB54 /* Debug */ = {
+		1D6058B40D05DD3D006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -308,10 +328,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyContactPoint/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MyContactPoint/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "My Contact Point";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -330,7 +350,7 @@
 			};
 			name = Debug;
 		};
-		1D6058AF0D05DD3D006BFB54 /* Release */ = {
+		1D6058B50D05DD3D006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -338,10 +358,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyContactPoint/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MyContactPoint/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "My Contact Point";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -366,22 +386,42 @@
 		1D6058880D05DD3D006BFB54 /* Build configuration list for PBXProject "MyContactPoint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D6058AC0D05DD3D006BFB54 /* Debug */,
-				1D6058AD0D05DD3D006BFB54 /* Release */,
+				1D6058B10D05DD3D006BFB54 /* Debug */,
+				1D6058B20D05DD3D006BFB54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D6058AB0D05DD3D006BFB54 /* Build configuration list for PBXNativeTarget "MyContactPoint" */ = {
+		1D6058B30D05DD3D006BFB54 /* Build configuration list for PBXNativeTarget "MyContactPoint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D6058AE0D05DD3D006BFB54 /* Debug */,
-				1D6058AF0D05DD3D006BFB54 /* Release */,
+				1D6058B40D05DD3D006BFB54 /* Debug */,
+				1D6058B50D05DD3D006BFB54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D6058AE0D05DD3D006BFB54 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.32.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D6058AB0D05DD3D006BFB54 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D6058AE0D05DD3D006BFB54 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+
 	};
 	rootObject = 1D6058850D05DD3D006BFB54 /* Project object */;
 }
