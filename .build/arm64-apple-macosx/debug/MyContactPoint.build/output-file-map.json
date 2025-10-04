@@ -2,6 +2,34 @@
   "": {
     "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/master.swiftdeps"
   },
+  "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/AuthService.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthService.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthService.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthService~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthService.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthService.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/AuthenticationView.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthenticationView.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthenticationView.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthenticationView~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthenticationView.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthenticationView.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/CameraPermissionService.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraPermissionService.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraPermissionService.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraPermissionService~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraPermissionService.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraPermissionService.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/CameraView.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraView.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraView.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraView~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraView.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraView.dia"
+  },
   "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/ContentView.swift": {
     "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/ContentView.d",
     "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/ContentView.swift.o",
@@ -36,5 +64,12 @@
     "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView~partial.swiftmodule",
     "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.swiftdeps",
     "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoUploadService.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService.dia"
   }
 }

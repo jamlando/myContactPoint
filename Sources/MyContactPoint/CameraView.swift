@@ -8,22 +8,41 @@
 import SwiftUI
 import AVFoundation
 import Photos
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct CameraView: View {
     @StateObject private var cameraManager = CameraManager()
     @StateObject private var permissionService = CameraPermissionService()
+    @StateObject private var uploadService = VideoUploadService()
+    @EnvironmentObject var authService: AuthService
     @State private var showingPermissionAlert = false
     @State private var showingSettingsAlert = false
     @State private var isRecording = false
     @State private var recordingDuration: TimeInterval = 0
     @State private var timer: Timer?
+    @State private var showingUploadAlert = false
+    @State private var uploadMessage = ""
     
     var body: some View {
         ZStack {
             // Camera Preview
             if permissionService.hasCameraPermission {
+                #if canImport(UIKit)
                 CameraPreviewView(cameraManager: cameraManager)
                     .ignoresSafeArea()
+                #else
+                // On macOS, show a placeholder since camera preview is iOS-specific
+                VStack {
+                    Image(systemName: "camera.fill")
+                        .font(.system(size: 60))
+                        .foregroundColor(.gray)
+                    Text("Camera Preview")
+                        .font(.title2)
+                        .foregroundColor(.secondary)
+                }
+                #endif
             } else {
                 // Permission Request View
                 PermissionRequestView(permissionService: permissionService)
@@ -38,7 +57,11 @@ struct CameraView: View {
                         isRecording: $isRecording,
                         recordingDuration: $recordingDuration,
                         cameraManager: cameraManager,
-                        permissionService: permissionService
+                        permissionService: permissionService,
+                        uploadService: uploadService,
+                        authService: authService,
+                        showingUploadAlert: $showingUploadAlert,
+                        uploadMessage: $uploadMessage
                     )
                 }
             }
@@ -46,23 +69,34 @@ struct CameraView: View {
         .onAppear {
             checkPermissions()
         }
-        .alert("Camera Permission Required", isPresented: $showingPermissionAlert) {
-            Button("Request Permission") {
-                Task {
-                    await requestPermissions()
-                }
-            }
-            Button("Cancel", role: .cancel) { }
-        } message: {
-            Text(permissionService.cameraPermissionMessage())
+        .alert(isPresented: $showingPermissionAlert) {
+            Alert(
+                title: Text("Camera Permission Required"),
+                message: Text(permissionService.cameraPermissionMessage()),
+                primaryButton: .default(Text("Request Permission")) {
+                    Task {
+                        await requestPermissions()
+                    }
+                },
+                secondaryButton: .cancel()
+            )
         }
-        .alert("Settings Required", isPresented: $showingSettingsAlert) {
-            Button("Open Settings") {
-                permissionService.openAppSettings()
-            }
-            Button("Cancel", role: .cancel) { }
-        } message: {
-            Text("Please enable camera access in Settings to record videos.")
+        .alert(isPresented: $showingSettingsAlert) {
+            Alert(
+                title: Text("Settings Required"),
+                message: Text("Please enable camera access in Settings to record videos."),
+                primaryButton: .default(Text("Open Settings")) {
+                    permissionService.openAppSettings()
+                },
+                secondaryButton: .cancel()
+            )
+        }
+        .alert(isPresented: $showingUploadAlert) {
+            Alert(
+                title: Text("Upload Status"),
+                message: Text(uploadMessage),
+                dismissButton: .default(Text("OK"))
+            )
         }
     }
     
@@ -85,6 +119,7 @@ struct CameraView: View {
 
 // MARK: - Camera Preview View
 
+#if canImport(UIKit)
 struct CameraPreviewView: UIViewRepresentable {
     let cameraManager: CameraManager
     
@@ -106,6 +141,7 @@ struct CameraPreviewView: UIViewRepresentable {
         }
     }
 }
+#endif
 
 // MARK: - Permission Request View
 
@@ -133,7 +169,7 @@ struct PermissionRequestView: View {
                     await permissionService.requestCameraPermission()
                 }
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(.bordered)
             .controlSize(.large)
             
             if permissionService.cameraPermissionStatus == .denied {
@@ -155,9 +191,32 @@ struct RecordingControlsView: View {
     @Binding var recordingDuration: TimeInterval
     let cameraManager: CameraManager
     @ObservedObject var permissionService: CameraPermissionService
+    @ObservedObject var uploadService: VideoUploadService
+    @ObservedObject var authService: AuthService
+    @Binding var showingUploadAlert: Bool
+    @Binding var uploadMessage: String
+    @State private var timer: Timer?
     
     var body: some View {
         VStack(spacing: 20) {
+            // Upload Progress Display
+            if uploadService.isUploading {
+                VStack(spacing: 8) {
+                    ProgressView(value: uploadService.uploadProgress)
+                        .progressViewStyle(LinearProgressViewStyle())
+                        .frame(width: 200)
+                    
+                    Text("Uploading video... \(Int(uploadService.uploadProgress * 100))%")
+                        .font(.caption)
+                        .foregroundColor(.white)
+                        .shadow(radius: 2)
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+                .background(Color.black.opacity(0.6))
+                .cornerRadius(20)
+            }
+            
             // Recording Duration Display
             if isRecording {
                 HStack {
@@ -174,7 +233,7 @@ struct RecordingControlsView: View {
                 }
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
-                .background(.black.opacity(0.6))
+                .background(Color.black.opacity(0.6))
                 .cornerRadius(20)
             }
             
@@ -237,6 +296,30 @@ struct RecordingControlsView: View {
         timer?.invalidate()
         timer = nil
         recordingDuration = 0
+        
+        // Trigger upload after a short delay to ensure video is saved
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            Task {
+                await uploadVideo()
+            }
+        }
+    }
+    
+    private func uploadVideo() async {
+        guard let userId = authService.currentUser?.id else {
+            uploadMessage = "Please sign in to upload videos"
+            showingUploadAlert = true
+            return
+        }
+        
+        do {
+            let swingVideo = try await uploadService.uploadVideo(from: cameraManager.lastRecordedVideoURL!, userId: userId)
+            uploadMessage = "Video uploaded successfully: \(swingVideo.filename)"
+            showingUploadAlert = true
+        } catch {
+            uploadMessage = "Failed to upload video: \(error.localizedDescription)"
+            showingUploadAlert = true
+        }
     }
     
     private func formatDuration(_ duration: TimeInterval) -> String {
@@ -254,6 +337,8 @@ class CameraManager: NSObject, ObservableObject {
     private var videoOutput = AVCaptureMovieFileOutput()
     private var audioInput: AVCaptureDeviceInput?
     private var videoInput: AVCaptureDeviceInput?
+    
+    @Published var lastRecordedVideoURL: URL?
     
     var previewLayer: AVCaptureVideoPreviewLayer {
         let layer = AVCaptureVideoPreviewLayer(session: captureSession)
@@ -320,6 +405,23 @@ class CameraManager: NSObject, ObservableObject {
         guard videoOutput.isRecording else { return }
         videoOutput.stopRecording()
     }
+    
+    func uploadLastRecordedVideo(uploadService: VideoUploadService, authService: AuthService) async {
+        guard let videoURL = lastRecordedVideoURL else { return }
+        
+        await MainActor.run {
+            guard let userId = authService.currentUser?.id else { return }
+            
+            Task {
+                do {
+                    let swingVideo = try await uploadService.uploadVideo(from: videoURL, userId: userId)
+                    print("Video uploaded successfully: \(swingVideo.filename)")
+                } catch {
+                    print("Failed to upload video: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
 }
 
 // MARK: - AVCaptureFileOutputRecordingDelegate
@@ -330,6 +432,9 @@ extension CameraManager: AVCaptureFileOutputRecordingDelegate {
             print("Recording error: \(error.localizedDescription)")
             return
         }
+        
+        // Store the recorded video URL
+        lastRecordedVideoURL = outputFileURL
         
         // Save to photo library
         PHPhotoLibrary.shared().performChanges({

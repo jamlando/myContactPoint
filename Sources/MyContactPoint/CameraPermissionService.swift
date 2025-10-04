@@ -9,6 +9,9 @@ import Foundation
 import AVFoundation
 import Photos
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 @MainActor
 class CameraPermissionService: ObservableObject {
@@ -134,9 +137,14 @@ class CameraPermissionService: ObservableObject {
     // MARK: - Settings Navigation
     
     func openAppSettings() {
+        #if canImport(UIKit)
         if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
             UIApplication.shared.open(settingsUrl)
         }
+        #else
+        // On macOS, we can't open app settings programmatically
+        print("Please open System Preferences > Security & Privacy > Privacy > Camera to enable camera access")
+        #endif
     }
 }
 

@@ -4696,6 +4696,22 @@
       "inputs" : [
         {
           "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/AuthService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/AuthenticationView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/CameraPermissionService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/CameraView.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/ContentView.swift"
         },
         {
@@ -4713,6 +4729,10 @@
         {
           "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/SplashScreenView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoUploadService.swift"
         },
         {
           "kind" : "file",
@@ -4755,11 +4775,16 @@
       "moduleName" : "MyContactPoint",
       "moduleOutputPath" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/Modules/MyContactPoint.swiftmodule",
       "objects" : [
+        "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthService.swift.o",
+        "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthenticationView.swift.o",
+        "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraPermissionService.swift.o",
+        "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraView.swift.o",
         "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/ContentView.swift.o",
         "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/LogoView.swift.o",
         "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/MyContactPointApp.swift.o",
         "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/OnboardingTutorialView.swift.o",
-        "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.swift.o"
+        "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.swift.o",
+        "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService.swift.o"
       ],
       "otherArguments" : [
         "-target",
@@ -4826,6 +4851,22 @@
       "outputs" : [
         {
           "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthenticationView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraPermissionService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraView.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/ContentView.swift.o"
         },
         {
@@ -4846,16 +4887,25 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/Modules/MyContactPoint.swiftmodule"
         }
       ],
       "prepareForIndexing" : false,
       "sources" : [
+        "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/AuthService.swift",
+        "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/AuthenticationView.swift",
+        "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/CameraPermissionService.swift",
+        "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/CameraView.swift",
         "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/ContentView.swift",
         "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/LogoView.swift",
         "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/MyContactPointApp.swift",
         "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/OnboardingTutorialView.swift",
-        "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/SplashScreenView.swift"
+        "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/SplashScreenView.swift",
+        "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoUploadService.swift"
       ],
       "tempsPath" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build",
       "wholeModuleOptimization" : false
@@ -11222,11 +11272,16 @@
       "-package-name",
       "mycontactpoint",
       "-c",
+      "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/AuthService.swift",
+      "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/AuthenticationView.swift",
+      "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/CameraPermissionService.swift",
+      "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/CameraView.swift",
       "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/ContentView.swift",
       "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/LogoView.swift",
       "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/MyContactPointApp.swift",
       "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/OnboardingTutorialView.swift",
       "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/SplashScreenView.swift",
+      "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoUploadService.swift",
       "-I",
       "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/Modules",
       "-target",
@@ -13401,6 +13456,22 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/AuthService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/AuthenticationView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/CameraPermissionService.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/CameraView.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/ContentView.swift"
         },
         {
@@ -13418,6 +13489,10 @@
         {
           "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/SplashScreenView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoUploadService.swift"
         }
       ],
       "outputFilePath" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/sources"
@@ -14151,6 +14226,22 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthenticationView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraPermissionService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraView.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/ContentView.swift.o"
         },
         {
@@ -14168,6 +14259,10 @@
         {
           "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService.swift.o"
         },
         {
           "kind" : "file",
@@ -15947,6 +16042,22 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthenticationView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraPermissionService.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraView.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/ContentView.swift.o"
         },
         {
@@ -15964,6 +16075,10 @@
         {
           "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService.swift.o"
         },
         {
           "kind" : "file",

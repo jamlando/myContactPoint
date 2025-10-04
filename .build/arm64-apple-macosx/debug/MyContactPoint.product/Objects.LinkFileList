@@ -178,11 +178,16 @@
 /Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/IssueReporting.build/WithIssueContext.swift.o
 /Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/IssueReporting.build/XCTest.swift.o
 /Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/IssueReportingPackageSupport.build/_Test.swift.o
+/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthService.swift.o
+/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/AuthenticationView.swift.o
+/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraPermissionService.swift.o
+/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/CameraView.swift.o
 /Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/ContentView.swift.o
 /Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/LogoView.swift.o
 /Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/MyContactPointApp.swift.o
 /Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/OnboardingTutorialView.swift.o
 /Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.swift.o
+/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService.swift.o
 /Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationEventPublisher.swift.o
 /Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationLifecyclePublisher.swift.o
 /Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationScreenViewPublisher.swift.o
