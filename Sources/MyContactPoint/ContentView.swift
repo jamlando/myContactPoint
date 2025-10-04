@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var authService: AuthService
     @State private var showSplash = true
     @State private var showTutorial = false
     
@@ -25,9 +26,36 @@ struct ContentView: View {
 }
 
 struct HomeView: View {
+    @EnvironmentObject var authService: AuthService
+    @State private var showingLogoutAlert = false
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 30) {
+                // User Info Header
+                VStack(spacing: 8) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Welcome back!")
+                                .font(.headline)
+                            if let user = authService.currentUser {
+                                Text(user.email ?? "User")
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                        Spacer()
+                        Button(action: {
+                            showingLogoutAlert = true
+                        }) {
+                            Image(systemName: "person.circle")
+                                .font(.title2)
+                                .foregroundColor(.blue)
+                        }
+                    }
+                    .padding(.horizontal)
+                }
+                
                 LogoView(size: .large)
                 
                 Text("My Contact Point")
@@ -75,12 +103,25 @@ struct HomeView: View {
             .padding()
             .navigationTitle("Home")
             #if os(iOS)
-            .toolbar(.hidden, for: .navigationBar)
+            .navigationBarHidden(true)
             #endif
+            .alert(isPresented: $showingLogoutAlert) {
+                Alert(
+                    title: Text("Sign Out"),
+                    message: Text("Are you sure you want to sign out?"),
+                    primaryButton: .destructive(Text("Sign Out")) {
+                        Task {
+                            try? await authService.signOut()
+                        }
+                    },
+                    secondaryButton: .cancel()
+                )
+            }
         }
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(AuthService())
 }
