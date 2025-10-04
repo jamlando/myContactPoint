@@ -28,6 +28,7 @@ struct ContentView: View {
 struct HomeView: View {
     @EnvironmentObject var authService: AuthService
     @State private var showingLogoutAlert = false
+    @State private var showingCameraView = false
     
     var body: some View {
         NavigationView {
@@ -69,11 +70,11 @@ struct HomeView: View {
                 
                 VStack(spacing: 16) {
                     Button(action: {
-                        // TODO: Navigate to video upload
+                        showingCameraView = true
                     }) {
                         HStack {
                             Image(systemName: "camera.fill")
-                            Text("Upload My Swing")
+                            Text("Record My Swing")
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -105,6 +106,9 @@ struct HomeView: View {
             #if os(iOS)
             .navigationBarHidden(true)
             #endif
+            .sheet(isPresented: $showingCameraView) {
+                CameraView()
+            }
             .alert(isPresented: $showingLogoutAlert) {
                 Alert(
                     title: Text("Sign Out"),
