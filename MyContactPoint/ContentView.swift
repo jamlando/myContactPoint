@@ -28,7 +28,7 @@ struct ContentView: View {
         .onAppear {
             // Check if user is already authenticated
             Task {
-                await authService.checkAuthStatus()
+                await authService.checkCurrentSession()
             }
         }
     }
