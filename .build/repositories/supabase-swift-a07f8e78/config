@@ -4,8 +4,11 @@
 	bare = true
 	ignorecase = true
 	precomposeunicode = true
+	symlinks = true
+	fsmonitor = false
+	longpaths = true
 [remote "origin"]
-	url = https://github.com/supabase/supabase-swift.git
+	url = https://github.com/supabase/supabase-swift
 	tagOpt = --no-tags
 	fetch = +refs/*:refs/*
 	mirror = true

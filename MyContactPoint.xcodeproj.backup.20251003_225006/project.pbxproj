@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D6058910D05DD3D006BFB54 /* MyContactPointApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058900D05DD3D006BFB54 /* MyContactPointApp.swift */; };
+		1D6058930D05DD3D006BFB54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058920D05DD3D006BFB54 /* ContentView.swift */; };
+		1D6058950D05DD3D006BFB54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D6058940D05DD3D006BFB54 /* Assets.xcassets */; };
+		1D6058980D05DD3D006BFB54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D6058970D05DD3D006BFB54 /* Preview Assets.xcassets */; };
+		1D60589A0D05DD3D006BFB54 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058990D05DD3D006BFB54 /* AuthService.swift */; };
+		1D60589C0D05DD3D006BFB54 /* CameraPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60589B0D05DD3D006BFB54 /* CameraPermissionService.swift */; };
+		1D60589E0D05DD3D006BFB54 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60589D0D05DD3D006BFB54 /* CameraView.swift */; };
+		1D6058A00D05DD3D006BFB54 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60589F0D05DD3D006BFB54 /* LogoView.swift */; };
+		1D6058A20D05DD3D006BFB54 /* OnboardingTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058A10D05DD3D006BFB54 /* OnboardingTutorialView.swift */; };
+		1D6058A40D05DD3D006BFB54 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058A30D05DD3D006BFB54 /* SplashScreenView.swift */; };
+		1D6058A60D05DD3D006BFB54 /* VideoLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058A50D05DD3D006BFB54 /* VideoLibraryView.swift */; };
+		1D6058A80D05DD3D006BFB54 /* VideoUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058A70D05DD3D006BFB54 /* VideoUploadService.swift */; };
+		1D6058AA0D05DD3D006BFB54 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058A90D05DD3D006BFB54 /* AuthenticationView.swift */; };
+		1D6058AC0D05DD3D006BFB54 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1D6058AB0D05DD3D006BFB54 /* Supabase */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D60588D0D05DD3D006BFB54 /* MyContactPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyContactPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058900D05DD3D006BFB54 /* MyContactPointApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyContactPointApp.swift; sourceTree = "<group>"; };
+		1D6058920D05DD3D006BFB54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1D6058940D05DD3D006BFB54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D6058970D05DD3D006BFB54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1D6058990D05DD3D006BFB54 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		1D60589B0D05DD3D006BFB54 /* CameraPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionService.swift; sourceTree = "<group>"; };
+		1D60589D0D05DD3D006BFB54 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		1D60589F0D05DD3D006BFB54 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		1D6058A10D05DD3D006BFB54 /* OnboardingTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTutorialView.swift; sourceTree = "<group>"; };
+		1D6058A30D05DD3D006BFB54 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		1D6058A50D05DD3D006BFB54 /* VideoLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoLibraryView.swift; sourceTree = "<group>"; };
+		1D6058A70D05DD3D006BFB54 /* VideoUploadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoUploadService.swift; sourceTree = "<group>"; };
+		1D6058A90D05DD3D006BFB54 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		1D6058AD0D05DD3D006BFB54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D6058B00D05DD3D006BFB54 /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588A0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D6058AC0D05DD3D006BFB54 /* Supabase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D6058840D05DD3D006BFB54 = {
+			isa = PBXGroup;
+			children = (
+				1D60588F0D05DD3D006BFB54 /* MyContactPoint */,
+				1D60588E0D05DD3D006BFB54 /* Products */,
+				1D6058AF0D05DD3D006BFB55 /* Package Dependencies */,
+			);
+			sourceTree = "<group>";
+		};
+		1D60588E0D05DD3D006BFB54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D60588D0D05DD3D006BFB54 /* MyContactPoint.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D60588F0D05DD3D006BFB54 /* MyContactPoint */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058900D05DD3D006BFB54 /* MyContactPointApp.swift */,
+				1D6058920D05DD3D006BFB54 /* ContentView.swift */,
+				1D6058990D05DD3D006BFB54 /* AuthService.swift */,
+				1D60589B0D05DD3D006BFB54 /* CameraPermissionService.swift */,
+				1D60589D0D05DD3D006BFB54 /* CameraView.swift */,
+				1D60589F0D05DD3D006BFB54 /* LogoView.swift */,
+				1D6058A10D05DD3D006BFB54 /* OnboardingTutorialView.swift */,
+				1D6058A30D05DD3D006BFB54 /* SplashScreenView.swift */,
+				1D6058A50D05DD3D006BFB54 /* VideoLibraryView.swift */,
+				1D6058A70D05DD3D006BFB54 /* VideoUploadService.swift */,
+				1D6058A90D05DD3D006BFB54 /* AuthenticationView.swift */,
+				1D6058940D05DD3D006BFB54 /* Assets.xcassets */,
+				1D6058AD0D05DD3D006BFB54 /* Info.plist */,
+				1D6058960D05DD3D006BFB54 /* Preview Content */,
+			);
+			path = MyContactPoint;
+			sourceTree = "<group>";
+		};
+		1D6058960D05DD3D006BFB54 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058970D05DD3D006BFB54 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1D6058AF0D05DD3D006BFB55 /* Package Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058B00D05DD3D006BFB54 /* Supabase.swift */,
+			);
+			name = "Package Dependencies";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D60588C0D05DD3D006BFB54 /* MyContactPoint */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058B30D05DD3D006BFB54 /* Build configuration list for PBXNativeTarget "MyContactPoint" */;
+			buildPhases = (
+				1D6058890D05DD3D006BFB54 /* Sources */,
+				1D60588A0D05DD3D006BFB54 /* Frameworks */,
+				1D60588B0D05DD3D006BFB54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyContactPoint;
+			packageProductDependencies = (
+				1D6058AB0D05DD3D006BFB54 /* Supabase */,
+			);
+			productName = MyContactPoint;
+			productReference = 1D60588D0D05DD3D006BFB54 /* MyContactPoint.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D6058850D05DD3D006BFB54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					1D60588C0D05DD3D006BFB54 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 1D6058880D05DD3D006BFB54 /* Build configuration list for PBXProject "MyContactPoint" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1D6058840D05DD3D006BFB54;
+			packageReferences = (
+				1D6058AE0D05DD3D006BFB54 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
+			productRefGroup = 1D60588E0D05DD3D006BFB54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D60588C0D05DD3D006BFB54 /* MyContactPoint */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588B0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D6058980D05DD3D006BFB54 /* Preview Assets.xcassets in Resources */,
+				1D6058950D05DD3D006BFB54 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D6058890D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D6058930D05DD3D006BFB54 /* ContentView.swift in Sources */,
+				1D60589A0D05DD3D006BFB54 /* AuthService.swift in Sources */,
+				1D60589C0D05DD3D006BFB54 /* CameraPermissionService.swift in Sources */,
+				1D60589E0D05DD3D006BFB54 /* CameraView.swift in Sources */,
+				1D6058A00D05DD3D006BFB54 /* LogoView.swift in Sources */,
+				1D6058A20D05DD3D006BFB54 /* OnboardingTutorialView.swift in Sources */,
+				1D6058A40D05DD3D006BFB54 /* SplashScreenView.swift in Sources */,
+				1D6058A60D05DD3D006BFB54 /* VideoLibraryView.swift in Sources */,
+				1D6058A80D05DD3D006BFB54 /* VideoUploadService.swift in Sources */,
+				1D6058AA0D05DD3D006BFB54 /* AuthenticationView.swift in Sources */,
+				1D6058910D05DD3D006BFB54 /* MyContactPointApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058B10D05DD3D006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 6Y226BJFJ7;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1D6058B20D05DD3D006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6Y226BJFJ7;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1D6058B40D05DD3D006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MyContactPoint/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MyContactPoint/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "My Contact Point";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taylorlarson.mycontactpoint.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D6058B50D05DD3D006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MyContactPoint/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = MyContactPoint/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "My Contact Point";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taylorlarson.mycontactpoint.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058880D05DD3D006BFB54 /* Build configuration list for PBXProject "MyContactPoint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058B10D05DD3D006BFB54 /* Debug */,
+				1D6058B20D05DD3D006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D6058B30D05DD3D006BFB54 /* Build configuration list for PBXNativeTarget "MyContactPoint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058B40D05DD3D006BFB54 /* Debug */,
+				1D6058B50D05DD3D006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D6058AE0D05DD3D006BFB54 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.32.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D6058AB0D05DD3D006BFB54 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D6058AE0D05DD3D006BFB54 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1D6058850D05DD3D006BFB54 /* Project object */;
+}
