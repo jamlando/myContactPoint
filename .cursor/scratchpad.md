@@ -4,7 +4,7 @@
 
 **Project**: My Contact Point - Baseball Hitting Mechanics Analysis iOS App
 **Version**: 1.3 (PRD Date: September 05, 2025)
-**Current Request**: Implement user authentication, video recording functionality, and prepare for TestFlight deployment while ensuring all dependencies are current and nothing is hardcoded
+**Current Request**: Fix UI centering issues in onboarding/sign-up flows - content is too far skewed towards the top, leaving excessive empty space at the bottom
 
 **Key Objectives**:
 - Create an iOS app that helps baseball players improve hitting mechanics through biomechanical analysis
@@ -32,12 +32,18 @@
 
 ## Key Challenges and Analysis
 
-**Current Development Challenges**:
-1. **Authentication Implementation**: Need to implement Supabase Auth integration with signup/signin flows
-2. **Video Recording**: Implement camera access, video capture, and Supabase Storage upload
-3. **Database Integration**: Connect SwiftUI app to Supabase database for user data persistence
-4. **TestFlight Preparation**: Configure app for Apple Developer Program and TestFlight deployment
-5. **Dependency Management**: Ensure all packages are current and no hardcoded values exist
+**Current UI Centering Issues Identified**:
+1. **Onboarding Content Layout**: Content (logo, title, subtitle, icons, text) is positioned too high on screen
+2. **Vertical Spacing**: Excessive empty space between content and bottom navigation elements
+3. **Visual Balance**: Content appears "skewed towards the top" instead of being vertically centered
+4. **Consistent Layout**: All 5 onboarding slides suffer from the same centering problem
+5. **Device Compatibility**: Issue affects different screen sizes and orientations
+
+**Root Cause Analysis**:
+- Current layout uses `VStack(spacing: 30)` with `Spacer()` at bottom
+- Content is pushed to top with insufficient vertical centering
+- Navigation elements (dots, buttons) are positioned at bottom without proper spacing
+- Missing proper vertical alignment strategy for content blocks
 
 **Technical Challenges**:
 1. **ML/AI Integration**: Implement Apple Vision (VNDetectHumanBodyPoseRequest) for on-device pose detection, with Vercel API fallback for older devices
@@ -62,15 +68,27 @@
 
 ## High-level Task Breakdown
 
-### Phase 1: Authentication Implementation (Priority: CRITICAL)
-- [x] **Task AUTH.1**: Implement Supabase Auth Service
-  - Success Criteria: Create AuthService.swift with signup, signin, and session management ✅ COMPLETED
-- [x] **Task AUTH.2**: Create Authentication UI Views
-  - Success Criteria: SignUpView.swift and SignInView.swift with proper validation and error handling ✅ COMPLETED
-- [x] **Task AUTH.3**: Implement User Session Management
-  - Success Criteria: Persistent login state, automatic session refresh, and logout functionality ✅ COMPLETED
-- [x] **Task AUTH.4**: Connect Auth to Database
-  - Success Criteria: User records automatically created in Supabase users table upon signup ✅ COMPLETED
+### Phase 1: UI Centering Analysis and Planning (Priority: HIGH)
+- [ ] **Task UI.1**: Analyze Current Onboarding Layout Structure
+  - Success Criteria: Document current VStack layout, spacing, and alignment issues
+- [ ] **Task UI.2**: Create Vertical Centering Strategy
+  - Success Criteria: Define proper vertical alignment approach for all screen sizes
+- [ ] **Task UI.3**: Design Improved Layout Structure
+  - Success Criteria: Create new layout that centers content vertically with proper spacing
+
+### Phase 2: Onboarding UI Implementation (Priority: HIGH)
+- [ ] **Task UI.4**: Implement Vertical Centering for TutorialSlideView
+  - Success Criteria: Content properly centered vertically with balanced spacing
+- [ ] **Task UI.5**: Fix Navigation Elements Positioning
+  - Success Criteria: Page dots and buttons positioned with proper spacing from content
+- [ ] **Task UI.6**: Test Across Different Screen Sizes
+  - Success Criteria: Layout works correctly on iPhone 14 Pro, iPhone SE, and iPad
+
+### Phase 3: Authentication UI Centering (Priority: MEDIUM)
+- [ ] **Task UI.7**: Apply Centering Fixes to AuthenticationView
+  - Success Criteria: Sign-up and sign-in forms properly centered vertically
+- [ ] **Task UI.8**: Test Authentication Flow UI
+  - Success Criteria: All authentication screens have proper vertical centering
 
 ### Phase 2: Video Recording Implementation (Priority: CRITICAL)
 - [ ] **Task VIDEO.1**: Implement Camera Access and Permissions
@@ -114,11 +132,11 @@
 
 ## Project Status Board
 
-### Current Sprint: Authentication, Video Recording, and TestFlight Preparation
-- [ ] **In Progress**: Authentication implementation with Supabase Auth
-- [ ] **Pending**: Video recording and camera integration
-- [ ] **Pending**: TestFlight deployment configuration
-- [ ] **Pending**: Dependency updates and hardcoded value removal
+### Current Sprint: UI Centering Fixes for Onboarding/Authentication Flows
+- [ ] **In Progress**: UI centering analysis and planning
+- [ ] **Pending**: Onboarding tutorial vertical centering implementation
+- [ ] **Pending**: Authentication view centering fixes
+- [ ] **Pending**: Cross-device testing and validation
 
 ### Completed Tasks
 - [x] PRD analysis and project understanding
@@ -131,9 +149,16 @@
 
 ## Current Status / Progress Tracking
 
-**Current Phase**: Authentication, Video Recording, and TestFlight Preparation - EXECUTOR MODE ACTIVE
-**Last Updated**: Task VIDEO.3 completed - Supabase Storage integration implemented
-**Next Milestone**: Ready to implement Video Library View (Task VIDEO.4)
+**Current Phase**: UI Centering Analysis and Planning - PLANNER MODE ACTIVE
+**Last Updated**: UI centering issues identified and planning phase initiated
+**Next Milestone**: Complete vertical centering strategy and begin implementation
+
+**UI Centering Issues Identified**:
+- ✅ **Onboarding Content**: All 5 tutorial slides have content skewed towards top
+- ✅ **Visual Analysis**: Images show excessive empty space at bottom of screens
+- ✅ **Layout Structure**: Current VStack with Spacer() approach insufficient
+- ✅ **Navigation Elements**: Page dots and buttons positioned too close to bottom edge
+- ✅ **Consistency**: Issue affects all onboarding slides uniformly
 
 **Current System Environment Status**:
 - macOS: 26.0.0 ✅ Current
@@ -195,7 +220,111 @@
 
 ## Executor's Feedback or Assistance Requests
 
-**EXECUTOR MODE ACTIVE** - Supabase Storage Integration Complete
+**PLANNER MODE ACTIVE** - UI Centering Analysis and Planning
+
+**TASK UI.1 COMPLETED SUCCESSFULLY** ✅
+
+**ANALYSIS SUMMARY**:
+✅ **Current Layout Structure Identified**: OnboardingTutorialView uses VStack with spacing: 30 and Spacer() at bottom
+✅ **Root Cause Confirmed**: Content pushed to top with insufficient vertical centering
+✅ **Navigation Elements**: Page dots and buttons positioned at bottom without proper spacing
+✅ **Consistency Issue**: All 5 tutorial slides suffer from identical centering problem
+✅ **Visual Evidence**: Images clearly show content skewed towards top with excessive bottom space
+
+**TECHNICAL ANALYSIS COMPLETED**:
+1. **Current Implementation Issues**:
+   - `TutorialSlideView` uses `VStack(spacing: 30)` with `Spacer()` at bottom
+   - Content (logo, title, subtitle, icon, text) grouped at top
+   - Navigation elements (dots, buttons) positioned at bottom edge
+   - No proper vertical centering strategy implemented
+
+2. **Layout Structure Problems**:
+   - Missing proper vertical alignment for content blocks
+   - Insufficient spacing between content and navigation elements
+   - No consideration for different screen sizes and orientations
+   - Content appears "floating" at top instead of being centered
+
+3. **Visual Impact**:
+   - Poor visual balance with excessive empty space at bottom
+   - Content appears disconnected from navigation elements
+   - Inconsistent spacing creates awkward visual hierarchy
+   - User experience negatively impacted by poor layout
+
+**TASK UI.2 COMPLETED SUCCESSFULLY** ✅
+
+**VERTICAL CENTERING STRATEGY DEFINED**:
+
+**Approach**: Implement proper vertical centering using SwiftUI's alignment and spacing system
+- **Primary Strategy**: Use `Spacer()` elements strategically to create balanced vertical distribution
+- **Secondary Strategy**: Implement proper padding and alignment for content blocks
+- **Tertiary Strategy**: Ensure navigation elements have appropriate spacing from content
+
+**Technical Implementation Plan**:
+1. **Content Block Centering**:
+   - Wrap main content (logo, title, subtitle, icon, text) in centered VStack
+   - Add `Spacer()` above and below content block for balanced distribution
+   - Use proper padding to ensure content doesn't touch screen edges
+
+2. **Navigation Elements Positioning**:
+   - Position page dots with consistent spacing from content
+   - Place navigation buttons with proper bottom padding
+   - Ensure navigation elements don't interfere with content centering
+
+3. **Responsive Design**:
+   - Test on iPhone 14 Pro (393 × 852px) - primary target
+   - Verify on iPhone SE (375 × 667px) - smaller screen
+   - Validate on iPad (768 × 1024px) - larger screen
+
+**TASK UI.3 COMPLETED SUCCESSFULLY** ✅
+
+**IMPROVED LAYOUT STRUCTURE DESIGNED**:
+
+**New Layout Architecture**:
+```swift
+VStack {
+    Spacer() // Top spacing for balance
+    
+    VStack(spacing: 20) {
+        LogoView(size: .large)
+        
+        VStack(spacing: 16) {
+            Text(slide.title)
+            Text(slide.subtitle)
+        }
+        
+        Image(systemName: slide.imageName)
+        
+        Text(slide.content)
+    }
+    .padding(.horizontal, 24)
+    
+    Spacer() // Bottom spacing for balance
+    
+    // Navigation elements with proper spacing
+    VStack(spacing: 16) {
+        // Page dots
+        HStack(spacing: 8) { /* dots */ }
+        
+        // Navigation buttons
+        HStack { /* Previous/Next buttons */ }
+    }
+    .padding(.bottom, 32)
+}
+```
+
+**Key Improvements**:
+1. **Balanced Spacing**: `Spacer()` elements above and below content block
+2. **Proper Padding**: Horizontal padding (24pt) for content, bottom padding (32pt) for navigation
+3. **Reduced Spacing**: Content spacing reduced from 30pt to 20pt for better density
+4. **Navigation Separation**: Navigation elements grouped separately with consistent spacing
+5. **Responsive Design**: Layout adapts to different screen sizes automatically
+
+**SUCCESS CRITERIA MET**:
+- ✅ New layout structure designed with proper vertical centering
+- ✅ Balanced spacing strategy implemented
+- ✅ Navigation elements positioned with appropriate spacing
+- ✅ Responsive design considerations included
+- ✅ Technical implementation ready for execution
 
 **TASK VIDEO.3 COMPLETED SUCCESSFULLY** ✅
 

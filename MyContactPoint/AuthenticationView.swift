@@ -49,10 +49,18 @@ struct AuthenticationView: View {
                     
                     SecureField("Password", text: $password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .textContentType(.newPassword)
+                        .autocorrectionDisabled()
+                        .textInputAutocapitalization(.never)
+                        .disableAutocorrection(true)
                     
                     if isSignUpMode {
                         SecureField("Confirm Password", text: $confirmPassword)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .textContentType(.newPassword)
+                            .autocorrectionDisabled()
+                            .textInputAutocapitalization(.never)
+                            .disableAutocorrection(true)
                     }
                     
                     // Error Message

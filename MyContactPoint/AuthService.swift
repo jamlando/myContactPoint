@@ -143,6 +143,7 @@ class AuthService: ObservableObject {
             
         } catch {
             // Profile doesn't exist, create it
+            print("User profile doesn't exist, creating new profile for user: \(user.id)")
             do {
                 let userProfile = UserProfile(
                     id: user.id,
@@ -179,9 +180,14 @@ class AuthService: ObservableObject {
                     .insert(userPreferences)
                     .execute()
                 
+                print("Successfully created user profile and preferences for user: \(user.id)")
+                
             } catch {
                 print("Error creating user profile: \(error)")
-                self.errorMessage = "Failed to create user profile"
+                print("Error details: \(error.localizedDescription)")
+                print("User ID: \(user.id)")
+                print("User email: \(user.email ?? "nil")")
+                self.errorMessage = "Failed to create user profile: \(error.localizedDescription)"
             }
         }
     }
