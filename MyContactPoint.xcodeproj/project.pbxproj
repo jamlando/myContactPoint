@@ -328,6 +328,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyContactPoint/Preview Content\"";
+				DEVELOPMENT_TEAM = 6Y226BJFJ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MyContactPoint/Info.plist;
@@ -358,6 +359,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyContactPoint/Preview Content\"";
+				DEVELOPMENT_TEAM = 6Y226BJFJ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = MyContactPoint/Info.plist;
@@ -421,7 +423,6 @@
 			productName = Supabase;
 		};
 /* End XCSwiftPackageProductDependency section */
-
 	};
 	rootObject = 1D6058850D05DD3D006BFB54 /* Project object */;
 }

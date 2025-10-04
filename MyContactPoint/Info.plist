@@ -28,10 +28,10 @@
 	<string>My Contact Point needs camera access to record your baseball swing for biomechanical analysis.</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>My Contact Point needs microphone access to record audio with your swing videos for better analysis.</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>My Contact Point needs photo library access to save and manage your swing videos.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>My Contact Point needs permission to save your analyzed swing videos to your photo library.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>My Contact Point needs photo library access to save and manage your swing videos.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
