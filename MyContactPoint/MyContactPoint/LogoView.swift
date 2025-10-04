@@ -23,7 +23,6 @@ enum LogoSize {
     }
 }
 
-@available(iOS 15.0, macOS 11.0, *)
 struct LogoView: View {
     let size: LogoSize
     

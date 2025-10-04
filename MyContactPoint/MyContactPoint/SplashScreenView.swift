@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@available(iOS 15.0, macOS 11.0, *)
 struct SplashScreenView: View {
     @Binding var showSplash: Bool
     @Binding var showTutorial: Bool
