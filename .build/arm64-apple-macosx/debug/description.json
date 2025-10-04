@@ -4732,6 +4732,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoLibraryView.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoUploadService.swift"
         },
         {
@@ -4784,6 +4788,7 @@
         "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/MyContactPointApp.swift.o",
         "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/OnboardingTutorialView.swift.o",
         "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.swift.o",
+        "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoLibraryView.swift.o",
         "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService.swift.o"
       ],
       "otherArguments" : [
@@ -4887,6 +4892,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoLibraryView.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService.swift.o"
         },
         {
@@ -4905,6 +4914,7 @@
         "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/MyContactPointApp.swift",
         "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/OnboardingTutorialView.swift",
         "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/SplashScreenView.swift",
+        "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoLibraryView.swift",
         "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoUploadService.swift"
       ],
       "tempsPath" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build",
@@ -11281,6 +11291,7 @@
       "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/MyContactPointApp.swift",
       "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/OnboardingTutorialView.swift",
       "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/SplashScreenView.swift",
+      "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoLibraryView.swift",
       "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoUploadService.swift",
       "-I",
       "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/Modules",
@@ -13492,6 +13503,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoLibraryView.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoUploadService.swift"
         }
       ],
@@ -14259,6 +14274,10 @@
         {
           "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoLibraryView.swift.o"
         },
         {
           "kind" : "file",
@@ -16075,6 +16094,10 @@
         {
           "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoLibraryView.swift.o"
         },
         {
           "kind" : "file",

@@ -29,6 +29,7 @@ struct HomeView: View {
     @EnvironmentObject var authService: AuthService
     @State private var showingLogoutAlert = false
     @State private var showingCameraView = false
+    @State private var showingVideoLibrary = false
     
     var body: some View {
         NavigationView {
@@ -84,7 +85,7 @@ struct HomeView: View {
                     }
                     
                     Button(action: {
-                        // TODO: Navigate to video library
+                        showingVideoLibrary = true
                     }) {
                         HStack {
                             Image(systemName: "video.fill")
@@ -108,6 +109,9 @@ struct HomeView: View {
             #endif
             .sheet(isPresented: $showingCameraView) {
                 CameraView()
+            }
+            .sheet(isPresented: $showingVideoLibrary) {
+                VideoLibraryView()
             }
             .alert(isPresented: $showingLogoutAlert) {
                 Alert(

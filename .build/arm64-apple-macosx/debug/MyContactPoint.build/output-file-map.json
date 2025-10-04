@@ -65,6 +65,13 @@
     "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.swiftdeps",
     "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/SplashScreenView.dia"
   },
+  "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoLibraryView.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoLibraryView.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoLibraryView.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoLibraryView~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoLibraryView.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoLibraryView.dia"
+  },
   "/Users/taylorlarson/myContactPoint/Sources/MyContactPoint/VideoUploadService.swift": {
     "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService.d",
     "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPoint.build/VideoUploadService.swift.o",
