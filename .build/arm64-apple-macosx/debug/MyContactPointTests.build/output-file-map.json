@@ -8,5 +8,12 @@
     "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/MyContactPointTests~partial.swiftmodule",
     "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/MyContactPointTests.swiftdeps",
     "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/MyContactPointTests.dia"
+  },
+  "/Users/taylorlarson/myContactPoint/Tests/MyContactPointTests/VideoWorkflowTestSuite.swift": {
+    "dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/VideoWorkflowTestSuite.d",
+    "object": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/VideoWorkflowTestSuite.swift.o",
+    "swiftmodule": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/VideoWorkflowTestSuite~partial.swiftmodule",
+    "swift-dependencies": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/VideoWorkflowTestSuite.swiftdeps",
+    "diagnostics": "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/VideoWorkflowTestSuite.dia"
   }
 }

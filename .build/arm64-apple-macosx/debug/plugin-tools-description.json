@@ -5038,6 +5038,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Tests/MyContactPointTests/VideoWorkflowTestSuite.swift"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
         },
         {
@@ -5053,7 +5057,8 @@
       "moduleName" : "MyContactPointTests",
       "moduleOutputPath" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/Modules/MyContactPointTests.swiftmodule",
       "objects" : [
-        "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/MyContactPointTests.swift.o"
+        "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/MyContactPointTests.swift.o",
+        "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/VideoWorkflowTestSuite.swift.o"
       ],
       "otherArguments" : [
         "-target",
@@ -5123,12 +5128,17 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/VideoWorkflowTestSuite.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/Modules/MyContactPointTests.swiftmodule"
         }
       ],
       "prepareForIndexing" : false,
       "sources" : [
-        "/Users/taylorlarson/myContactPoint/Tests/MyContactPointTests/MyContactPointTests.swift"
+        "/Users/taylorlarson/myContactPoint/Tests/MyContactPointTests/MyContactPointTests.swift",
+        "/Users/taylorlarson/myContactPoint/Tests/MyContactPointTests/VideoWorkflowTestSuite.swift"
       ],
       "tempsPath" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build",
       "wholeModuleOptimization" : false
@@ -11437,6 +11447,7 @@
       "mycontactpoint",
       "-c",
       "/Users/taylorlarson/myContactPoint/Tests/MyContactPointTests/MyContactPointTests.swift",
+      "/Users/taylorlarson/myContactPoint/Tests/MyContactPointTests/VideoWorkflowTestSuite.swift",
       "-I",
       "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/Modules",
       "-target",
@@ -16113,6 +16124,10 @@
         },
         {
           "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/VideoWorkflowTestSuite.swift.o"
+        },
+        {
+          "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/PostHog.build/ApplicationEventPublisher.swift.o"
         },
         {
@@ -17156,6 +17171,10 @@
         {
           "kind" : "file",
           "name" : "/Users/taylorlarson/myContactPoint/Tests/MyContactPointTests/MyContactPointTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/taylorlarson/myContactPoint/Tests/MyContactPointTests/VideoWorkflowTestSuite.swift"
         }
       ],
       "outputFilePath" : "/Users/taylorlarson/myContactPoint/.build/arm64-apple-macosx/debug/MyContactPointTests.build/sources"
