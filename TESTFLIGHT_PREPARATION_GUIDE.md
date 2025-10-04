@@ -1,13 +1,14 @@
 # TestFlight Preparation Guide for My Contact Point
 
 ## Overview
-This guide provides step-by-step instructions for preparing the My Contact Point iOS app for TestFlight deployment.
+This guide provides step-by-step instructions for preparing the My Contact Point iOS app for TestFlight deployment as your second app (after Joanie).
 
-## Prerequisites
-- Apple Developer Account ($99/year)
-- Xcode 15.0 or later
-- iOS device for testing
-- Valid Apple Developer Program membership
+## Prerequisites ✅ COMPLETED
+- ✅ Apple Developer Account (already active)
+- ✅ Xcode 15.0 or later
+- ✅ iOS device for testing
+- ✅ Valid Apple Developer Program membership
+- ✅ Existing TestFlight experience with Joanie app
 
 ## Step 1: Create iOS App Project in Xcode
 
@@ -19,11 +20,13 @@ This guide provides step-by-step instructions for preparing the My Contact Point
 
 ### 1.2 Configure Project Settings
 - **Product Name**: `MyContactPoint`
-- **Bundle Identifier**: `com.mycontactpoint.app` (or your preferred identifier)
+- **Bundle Identifier**: `com.taylorlarson.mycontactpoint` (using your developer account pattern)
 - **Language**: Swift
 - **Interface**: SwiftUI
 - **Use Core Data**: No
 - **Include Tests**: Yes
+
+**Note**: Using `com.taylorlarson.mycontactpoint` to avoid conflicts with Joanie and follow your existing naming pattern.
 
 ### 1.3 Save Project
 - Choose `/Users/taylorlarson/myContactPoint` as the save location
@@ -36,7 +39,7 @@ This guide provides step-by-step instructions for preparing the My Contact Point
 2. Select the "MyContactPoint" target
 3. In the "General" tab:
    - **Display Name**: `My Contact Point`
-   - **Bundle Identifier**: `com.mycontactpoint.app`
+   - **Bundle Identifier**: `com.taylorlarson.mycontactpoint`
    - **Version**: `1.0`
    - **Build**: `1`
    - **Deployment Target**: `iOS 15.0`
@@ -44,8 +47,8 @@ This guide provides step-by-step instructions for preparing the My Contact Point
 ### 2.2 Signing & Capabilities
 1. In the "Signing & Capabilities" tab:
    - Check "Automatically manage signing"
-   - Select your Apple Developer Team
-   - Ensure the bundle identifier is unique
+   - Select your existing Apple Developer Team (same as Joanie)
+   - The bundle identifier `com.taylorlarson.mycontactpoint` should be unique and available
 
 ### 2.3 Info.plist Configuration
 Add the following keys to `Info.plist`:
@@ -140,11 +143,13 @@ struct SupabaseConfig {
 
 ### 7.1 App Information
 1. Go to [App Store Connect](https://appstoreconnect.apple.com)
-2. Create a new app:
+2. Create a new app (separate from Joanie):
    - **Name**: `My Contact Point`
    - **Primary Language**: English
-   - **Bundle ID**: `com.mycontactpoint.app`
+   - **Bundle ID**: `com.taylorlarson.mycontactpoint`
    - **SKU**: `mycontactpoint-001`
+
+**Important**: This creates a completely separate app from Joanie, so there's no risk of interference.
 
 ### 7.2 App Store Information
 Fill in the required information:
@@ -163,18 +168,20 @@ Upload screenshots for:
 
 ### 8.1 Internal Testing
 1. In App Store Connect, go to TestFlight
-2. Add internal testers (up to 100)
-3. Submit for review
+2. Select "My Contact Point" app (separate from Joanie)
+3. Add internal testers (up to 100) - can reuse testers from Joanie if desired
+4. Submit for review
 
 ### 8.2 External Testing
-1. Create external testing groups
-2. Add external testers (up to 10,000)
+1. Create external testing groups for My Contact Point
+2. Add external testers (up to 10,000) - separate from Joanie testers
 3. Submit for review
 
 ### 8.3 Beta Review Process
-- Apple reviews TestFlight builds
+- Apple reviews TestFlight builds independently from Joanie
 - Review typically takes 24-48 hours
 - Address any feedback from Apple
+- No impact on Joanie's TestFlight status
 
 ## Step 9: Production Release
 
@@ -191,10 +198,11 @@ Upload screenshots for:
 ## Troubleshooting
 
 ### Common Issues
-1. **Signing Errors**: Ensure your Apple Developer account is active
+1. **Signing Errors**: Your Apple Developer account is already active (used for Joanie)
 2. **Build Failures**: Check that all dependencies are properly added
-3. **Upload Failures**: Verify bundle identifier is unique
+3. **Upload Failures**: Bundle identifier `com.taylorlarson.mycontactpoint` should be unique
 4. **Review Rejections**: Address Apple's feedback promptly
+5. **Conflicts with Joanie**: None expected - completely separate apps with different bundle IDs
 
 ### Support Resources
 - [Apple Developer Documentation](https://developer.apple.com/documentation/)
@@ -215,9 +223,18 @@ Upload screenshots for:
 - **Support**: Set up customer support channels
 - **Analytics**: Configure PostHog analytics for user insights
 - **Backup**: Keep regular backups of your project
+- **Joanie Compatibility**: My Contact Point is completely separate from Joanie - no interference expected
+
+## Key Differences from Joanie Setup
+
+- **Bundle ID**: `com.taylorlarson.mycontactpoint` (vs Joanie's bundle ID)
+- **App Name**: "My Contact Point" (vs "Joanie")
+- **Functionality**: Baseball swing analysis (vs Joanie's functionality)
+- **TestFlight**: Separate app, separate testers, separate reviews
+- **Developer Account**: Same account, different app
 
 ---
 
-**Status**: Ready for TestFlight preparation
+**Status**: Ready for TestFlight preparation (Second App)
 **Last Updated**: October 3, 2025
 **Next Action**: Follow Step 1 to create the iOS app project in Xcode
