@@ -120,17 +120,6 @@ struct AuthenticationView: View {
                         .cornerRadius(8)
                     }
                     .disabled(authService.isLoading || !isFormValid)
-                    .onTapGesture {
-                        print("🔘 Button tapped - isLoading: \(authService.isLoading), isFormValid: \(isFormValid)")
-                        print("📧 Email: '\(email)', Password length: \(password.count)")
-                        print("📝 Full name: '\(fullName)', Confirm password length: \(confirmPassword.count)")
-                        print("🔍 Email valid: \(authService.validateEmail(email))")
-                        if isSignUpMode {
-                            let passwordValidation = authService.validatePassword(password)
-                            print("🔒 Password valid: \(passwordValidation.isValid)")
-                            print("🔒 Password match: \(password == confirmPassword)")
-                        }
-                    }
                     
                     // Toggle Mode Button
                     Button(action: {
@@ -220,6 +209,8 @@ struct AuthenticationView: View {
         print("🔘 handleAuthentication called - isSignUpMode: \(isSignUpMode)")
         print("📧 Email: \(email)")
         print("🔒 Password length: \(password.count)")
+        print("🔄 isLoading: \(authService.isLoading)")
+        print("✅ isFormValid: \(isFormValid)")
         
         Task {
             do {
