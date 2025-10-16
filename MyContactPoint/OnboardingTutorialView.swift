@@ -10,10 +10,11 @@ import SwiftUI
 struct OnboardingTutorialView: View {
     @Binding var showTutorial: Bool
     @State private var currentSlide = 0
+    let onSignInTapped: () -> Void
     
     private let slides = [
         TutorialSlide(
-            title: "Welcome to My Contact Point",
+            title: "Welcome",
             subtitle: "Improve your swing with MLB-level analysis",
             content: "We'll help you analyze your baseball swing using advanced biomechanical data and compare it to MLB averages.",
             imageName: "figure.baseball"
@@ -45,7 +46,10 @@ struct OnboardingTutorialView: View {
     ]
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
+            // Static Header Component
+            OnboardingHeaderView(onSignInTapped: onSignInTapped)
+            
             TabView(selection: $currentSlide) {
                 ForEach(0..<slides.count, id: \.self) { index in
                     TutorialSlideView(slide: slides[index])
@@ -60,7 +64,17 @@ struct OnboardingTutorialView: View {
             
             // Navigation elements with proper spacing
             VStack(spacing: 16) {
-                // Primary action button (above dots)
+                // Custom page indicator (moved above primary button per ONBOARD.4)
+                HStack(spacing: 8) {
+                    ForEach(0..<slides.count, id: \.self) { index in
+                        Circle()
+                            .fill(index == currentSlide ? Color.blue : Color.gray.opacity(0.3))
+                            .frame(width: 8, height: 8)
+                            .animation(.easeInOut, value: currentSlide)
+                    }
+                }
+
+                // Primary action button (now below dots)
                 if currentSlide < slides.count - 1 {
                     // Slides 1-4: "Sign up Now" button
                     Button("Sign up Now") {
@@ -84,7 +98,7 @@ struct OnboardingTutorialView: View {
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(12)
-                        
+
                         Button("Sign In") {
                             // TODO: Navigate to sign in flow
                             showTutorial = false
@@ -99,18 +113,8 @@ struct OnboardingTutorialView: View {
                         )
                     }
                 }
-                
-                // Custom page indicator
-                HStack(spacing: 8) {
-                    ForEach(0..<slides.count, id: \.self) { index in
-                        Circle()
-                            .fill(index == currentSlide ? Color.blue : Color.gray.opacity(0.3))
-                            .frame(width: 8, height: 8)
-                            .animation(.easeInOut, value: currentSlide)
-                    }
-                }
-                
-                // Navigation text (below dots)
+
+                // Navigation text (below buttons)
                 HStack {
                     if currentSlide > 0 {
                         Button("Previous") {
@@ -142,6 +146,34 @@ struct OnboardingTutorialView: View {
     }
 }
 
+struct OnboardingHeaderView: View {
+    let onSignInTapped: () -> Void
+    
+    var body: some View {
+        VStack(spacing: 16) {
+            HStack {
+                Text("My Contact Point")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.primary)
+                
+                Spacer()
+                
+                Button("Sign In") {
+                    onSignInTapped()
+                }
+                .font(.subheadline)
+                .foregroundColor(.blue)
+            }
+            .padding(.horizontal, 24)
+            .padding(.top, 16)
+            
+            LogoView(size: .large)
+        }
+        .padding(.bottom, 8)
+    }
+}
+
 struct TutorialSlide {
     let title: String
     let subtitle: String
@@ -157,17 +189,10 @@ struct TutorialSlideView: View {
             Spacer() // Top spacing for balance
             
             VStack(spacing: 20) {
-                LogoView(size: .large)
-                
                 VStack(spacing: 16) {
-                    Text(slide.title)
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                    
                     Text(slide.subtitle)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                        .font(.title2)
+                        .fontWeight(.semibold)
                         .multilineTextAlignment(.center)
                 }
                 
@@ -187,5 +212,5 @@ struct TutorialSlideView: View {
 }
 
 #Preview {
-    OnboardingTutorialView(showTutorial: .constant(true))
+    OnboardingTutorialView(showTutorial: .constant(true), onSignInTapped: {})
 }

@@ -11,17 +11,24 @@ struct ContentView: View {
     @StateObject private var authService = AuthService()
     @State private var showSplash = true
     @State private var showTutorial = false
+    @State private var showAuthentication = false
     
     var body: some View {
         Group {
             if showSplash {
                 SplashScreenView(showSplash: $showSplash, showTutorial: $showTutorial)
             } else if showTutorial {
-                OnboardingTutorialView(showTutorial: $showTutorial)
+                OnboardingTutorialView(
+                    showTutorial: $showTutorial,
+                    onSignInTapped: {
+                        showTutorial = false
+                        showAuthentication = true
+                    }
+                )
+            } else if showAuthentication || (!authService.isAuthenticated && !showTutorial) {
+                AuthenticationView()
             } else if authService.isAuthenticated {
                 MainAppView()
-            } else {
-                AuthenticationView()
             }
         }
         .environmentObject(authService)
