@@ -38,8 +38,10 @@ class AuthService: ObservableObject {
         do {
             let session = try await supabase.auth.session
             self.currentUser = session.user
-            self.isAuthenticated = true
-            await createUserProfileIfNeeded(user: session.user)
+            
+            // Ensure user profile exists
+            let profileExists = await createUserProfileIfNeeded(user: session.user)
+            self.isAuthenticated = profileExists
         } catch {
             print("Error checking current session: \(error)")
             self.isAuthenticated = false
@@ -62,10 +64,20 @@ class AuthService: ObservableObject {
             )
             
             self.currentUser = authResponse.user
-            self.isAuthenticated = true
             
             // Create user profile in our custom users table
-            await createUserProfileIfNeeded(user: authResponse.user, fullName: fullName)
+            let profileCreated = await createUserProfileIfNeeded(user: authResponse.user, fullName: fullName)
+            
+            // Only set authenticated if profile creation succeeded
+            if profileCreated {
+                self.isAuthenticated = true
+            } else {
+                // Profile creation failed, sign out the user
+                try await supabase.auth.signOut()
+                self.currentUser = nil
+                self.isAuthenticated = false
+                throw AuthError.profileCreationFailed
+            }
         } catch {
             self.errorMessage = error.localizedDescription
             throw error
@@ -124,7 +136,7 @@ class AuthService: ObservableObject {
     
     // MARK: - User Profile Management
     
-    private func createUserProfileIfNeeded(user: User, fullName: String? = nil) async {
+    private func createUserProfileIfNeeded(user: User, fullName: String? = nil) async -> Bool {
         do {
             // Check if user profile already exists
             let _ = try await supabase
@@ -135,7 +147,7 @@ class AuthService: ObservableObject {
                 .execute()
             
             // Profile already exists, no need to create
-            return
+            return true
             
         } catch {
             // Profile doesn't exist, create it
@@ -177,6 +189,7 @@ class AuthService: ObservableObject {
                     .execute()
                 
                 print("Successfully created user profile and preferences for user: \(user.id)")
+                return true
                 
             } catch {
                 print("Error creating user profile: \(error)")
@@ -184,6 +197,7 @@ class AuthService: ObservableObject {
                 print("User ID: \(user.id)")
                 print("User email: \(user.email ?? "nil")")
                 self.errorMessage = "Failed to create user profile: \(error.localizedDescription)"
+                return false
             }
         }
     }
@@ -282,6 +296,19 @@ struct UserPreferences: Codable {
 enum SubscriptionTier: String, Codable, CaseIterable {
     case free = "free"
     case premium = "premium"
+}
+
+// MARK: - Error Types
+
+enum AuthError: LocalizedError {
+    case profileCreationFailed
+    
+    var errorDescription: String? {
+        switch self {
+        case .profileCreationFailed:
+            return "Failed to create user profile. Please try again."
+        }
+    }
 }
 
 // MARK: - Extensions
