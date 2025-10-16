@@ -33,7 +33,7 @@ struct ContentView: View {
                     }
                 )
             } else if showAuthentication || (!authService.isAuthenticated && !showTutorial) {
-                AuthenticationView(isSignUpMode: $isSignUpMode)
+                AuthenticationView(isSignUpMode: $isSignUpMode, showAuthentication: $showAuthentication)
             } else if authService.isAuthenticated {
                 MainAppView()
             }

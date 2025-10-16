@@ -95,22 +95,30 @@ class AuthService: ObservableObject {
         errorMessage = nil
         defer { isLoading = false }
         
+        print("🔐 Starting sign-in for email: \(email)")
+        
         do {
             let authResponse = try await supabase.auth.signIn(
                 email: email,
                 password: password
             )
             
+            print("✅ Supabase auth successful for user: \(authResponse.user.id)")
             self.currentUser = authResponse.user
             
             // Ensure user profile exists before setting authenticated
+            print("🔍 Checking if user profile exists...")
             let profileExists = await createUserProfileIfNeeded(user: authResponse.user)
+            print("📊 Profile exists: \(profileExists)")
             
             if profileExists {
                 self.isAuthenticated = true
+                print("✅ User authenticated successfully")
                 // Update last login timestamp
                 await updateLastLogin(userId: authResponse.user.id)
+                print("✅ Last login updated")
             } else {
+                print("❌ Profile creation failed, signing out user")
                 // Profile creation failed, sign out the user
                 try await supabase.auth.signOut()
                 self.currentUser = nil
@@ -118,6 +126,7 @@ class AuthService: ObservableObject {
                 throw AuthError.profileCreationFailed
             }
         } catch {
+            print("❌ Sign-in error: \(error)")
             self.errorMessage = error.localizedDescription
             throw error
         }
@@ -154,6 +163,7 @@ class AuthService: ObservableObject {
     // MARK: - User Profile Management
     
     private func createUserProfileIfNeeded(user: User, fullName: String? = nil) async -> Bool {
+        print("🔍 Checking if user profile exists for user: \(user.id)")
         do {
             // Check if user profile already exists
             let _ = try await supabase
@@ -164,11 +174,13 @@ class AuthService: ObservableObject {
                 .execute()
             
             // Profile already exists, no need to create
+            print("✅ User profile already exists")
             return true
             
         } catch {
             // Profile doesn't exist, create it
-            print("User profile doesn't exist, creating new profile for user: \(user.id)")
+            print("📝 User profile doesn't exist, creating new profile for user: \(user.id)")
+            print("❌ Profile check error: \(error)")
             do {
                 let userProfile = UserProfile(
                     id: user.id,
@@ -182,10 +194,12 @@ class AuthService: ObservableObject {
                     isActive: true
                 )
                 
+                print("📝 Creating user profile: \(userProfile.email)")
                 try await supabase
                     .from("users")
                     .insert(userProfile)
                     .execute()
+                print("✅ User profile created successfully")
                 
                 // Create default user preferences
                 let userPreferences = UserPreferences(
@@ -200,12 +214,14 @@ class AuthService: ObservableObject {
                     updatedAt: Date()
                 )
                 
+                print("📝 Creating user preferences...")
                 try await supabase
                     .from("user_preferences")
                     .insert(userPreferences)
                     .execute()
+                print("✅ User preferences created successfully")
                 
-                print("Successfully created user profile and preferences for user: \(user.id)")
+                print("✅ Successfully created user profile and preferences for user: \(user.id)")
                 return true
                 
             } catch {

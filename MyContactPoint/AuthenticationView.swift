@@ -10,6 +10,7 @@ import SwiftUI
 struct AuthenticationView: View {
     @EnvironmentObject var authService: AuthService
     @Binding var isSignUpMode: Bool
+    @Binding var showAuthentication: Bool
     @State private var email = ""
     @State private var password = ""
     @State private var fullName = ""
@@ -19,6 +20,24 @@ struct AuthenticationView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 24) {
+                // Back Button
+                HStack {
+                    Button(action: {
+                        showAuthentication = false
+                    }) {
+                        HStack(spacing: 8) {
+                            Image(systemName: "chevron.left")
+                                .font(.system(size: 16, weight: .medium))
+                            Text("Back to Tutorial")
+                                .font(.system(size: 16, weight: .medium))
+                        }
+                        .foregroundColor(.blue)
+                    }
+                    Spacer()
+                }
+                .padding(.horizontal, 32)
+                .padding(.top, 20)
+                
                 // Logo and Title
                 VStack(spacing: 16) {
                     Image(systemName: "baseball.fill")
@@ -101,6 +120,9 @@ struct AuthenticationView: View {
                         .cornerRadius(8)
                     }
                     .disabled(authService.isLoading || !isFormValid)
+                    .onTapGesture {
+                        print("🔘 Button tapped - isLoading: \(authService.isLoading), isFormValid: \(isFormValid)")
+                    }
                     
                     // Toggle Mode Button
                     Button(action: {
@@ -159,15 +181,21 @@ struct AuthenticationView: View {
     // MARK: - Actions
     
     private func handleAuthentication() {
+        print("🔘 handleAuthentication called - isSignUpMode: \(isSignUpMode)")
+        print("📧 Email: \(email)")
+        print("🔒 Password length: \(password.count)")
+        
         Task {
             do {
                 if isSignUpMode {
+                    print("📝 Starting sign-up process...")
                     try await authService.signUp(
                         email: email,
                         password: password,
                         fullName: fullName.isEmpty ? nil : fullName
                     )
                 } else {
+                    print("🔐 Starting sign-in process...")
                     try await authService.signIn(
                         email: email,
                         password: password
@@ -175,7 +203,7 @@ struct AuthenticationView: View {
                 }
             } catch {
                 // Error is handled by AuthService and displayed in UI
-                print("Authentication error: \(error)")
+                print("❌ Authentication error: \(error)")
             }
         }
     }
@@ -208,7 +236,7 @@ struct AuthenticationView: View {
 
 struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticationView(isSignUpMode: .constant(false))
+        AuthenticationView(isSignUpMode: .constant(false), showAuthentication: .constant(true))
             .environmentObject(AuthService())
     }
 }
