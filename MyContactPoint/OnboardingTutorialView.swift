@@ -57,17 +57,18 @@ struct OnboardingTutorialView: View {
             .tabViewStyle(.automatic)
             #endif
             
-            // Navigation elements with proper spacing
-            VStack(spacing: 16) {
+            // Navigation elements with optimized spacing
+            VStack(spacing: 20) {
                 // Custom page indicator (moved above primary button per ONBOARD.4)
-                HStack(spacing: 8) {
+                HStack(spacing: 10) {
                     ForEach(0..<slides.count, id: \.self) { index in
                         Circle()
                             .fill(index == currentSlide ? Color.blue : Color.gray.opacity(0.3))
-                            .frame(width: 8, height: 8)
-                            .animation(.easeInOut, value: currentSlide)
+                            .frame(width: 10, height: 10)
+                            .animation(.easeInOut(duration: 0.3), value: currentSlide)
                     }
                 }
+                .padding(.vertical, 4)
 
                 // Primary action button (now below dots) - standardized across all slides
                 Button("Sign up Now") {
@@ -75,36 +76,40 @@ struct OnboardingTutorialView: View {
                     showTutorial = false
                 }
                 .frame(maxWidth: .infinity)
-                .padding()
+                .padding(.vertical, 16)
                 .background(Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(12)
+                .font(.headline)
 
                 // Navigation text (below buttons)
                 HStack {
                     if currentSlide > 0 {
                         Button("Previous") {
-                            withAnimation {
+                            withAnimation(.easeInOut(duration: 0.3)) {
                                 currentSlide -= 1
                             }
                         }
                         .foregroundColor(.blue)
+                        .font(.subheadline)
                     }
                     
                     Spacer()
                     
                     if currentSlide < slides.count - 1 {
                         Button("Next") {
-                            withAnimation {
+                            withAnimation(.easeInOut(duration: 0.3)) {
                                 currentSlide += 1
                             }
                         }
                         .foregroundColor(.blue)
+                        .font(.subheadline)
                     }
                 }
+                .padding(.top, 8)
             }
-            .padding(.horizontal)
-            .padding(.bottom, 32)
+            .padding(.horizontal, 24)
+            .padding(.bottom, 40)
         }
         #if os(iOS)
         .navigationBarHidden(true)
@@ -116,7 +121,7 @@ struct OnboardingHeaderView: View {
     let onSignInTapped: () -> Void
     
     var body: some View {
-        VStack(spacing: 16) {
+        VStack(spacing: 20) {
             HStack {
                 Text("My Contact Point")
                     .font(.title2)
@@ -132,11 +137,11 @@ struct OnboardingHeaderView: View {
                 .foregroundColor(.blue)
             }
             .padding(.horizontal, 24)
-            .padding(.top, 16)
+            .padding(.top, 20)
             
             LogoView(size: .large)
         }
-        .padding(.bottom, 8)
+        .padding(.bottom, 16)
     }
 }
 
@@ -150,28 +155,28 @@ struct TutorialSlideView: View {
     let slide: TutorialSlide
     
     var body: some View {
-        VStack {
-            Spacer() // Top spacing for balance
+        VStack(spacing: 0) {
+            Spacer(minLength: 20)
             
-            VStack(spacing: 20) {
-                VStack(spacing: 16) {
-                    Text(slide.subtitle)
-                        .font(.title2)
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.center)
-                }
+            VStack(spacing: 24) {
+                Text(slide.subtitle)
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 24)
                 
                 Image(systemName: slide.imageName)
-                    .font(.system(size: 60))
+                    .font(.system(size: 64))
                     .foregroundColor(.blue)
                 
                 Text(slide.content)
                     .font(.body)
                     .multilineTextAlignment(.center)
+                    .lineSpacing(4)
+                    .padding(.horizontal, 24)
             }
-            .padding(.horizontal, 24)
             
-            Spacer() // Bottom spacing for balance
+            Spacer(minLength: 20)
         }
     }
 }
