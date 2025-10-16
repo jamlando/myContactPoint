@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var authService = AuthService()
+    @StateObject private var authService = FirebaseAuthService()
     @State private var showSplash = true
     @State private var showTutorial = false
     @State private var showAuthentication = false
@@ -32,22 +32,36 @@ struct ContentView: View {
                         showAuthentication = true
                     }
                 )
-            } else if showAuthentication || (!authService.isAuthenticated && !showTutorial) {
+            } else if showAuthentication {
                 AuthenticationView(isSignUpMode: $isSignUpMode, showAuthentication: $showAuthentication)
+            } else if !authService.isAuthenticated {
+                OnboardingTutorialView(
+                    showTutorial: $showTutorial,
+                    onSignInTapped: {
+                        showTutorial = false
+                        isSignUpMode = false
+                        showAuthentication = true
+                    },
+                    onSignUpTapped: {
+                        showTutorial = false
+                        isSignUpMode = true
+                        showAuthentication = true
+                    }
+                )
             } else if authService.isAuthenticated {
                 MainAppView()
             }
         }
         .environmentObject(authService)
         .onAppear {
-            // Check if user is already authenticated
-            Task {
-                await authService.checkCurrentSession()
-            }
+            // Firebase Auth automatically handles session checking
+            print("🔄 ContentView: App appeared, auth state: \(authService.isAuthenticated)")
         }
         .onChange(of: authService.isAuthenticated) { isAuthenticated in
+            print("🔄 ContentView: isAuthenticated changed to: \(isAuthenticated)")
             // Reset authentication view when user becomes authenticated
             if isAuthenticated {
+                print("✅ ContentView: User authenticated, hiding authentication view")
                 showAuthentication = false
             }
         }
@@ -55,7 +69,7 @@ struct ContentView: View {
 }
 
 struct MainAppView: View {
-    @EnvironmentObject var authService: AuthService
+    @EnvironmentObject var authService: FirebaseAuthService
     @StateObject private var permissionService = CameraPermissionService()
     @State private var showingCameraView = false
     @State private var showingLibraryView = false
@@ -81,8 +95,8 @@ struct MainAppView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.primary)
                     
-                    if let user = authService.currentUser {
-                        Text("Welcome back, \(user.userMetadata["full_name"]?.stringValue ?? "Player")!")
+                    if authService.isAuthenticated {
+                        Text("Welcome back, \(authService.userDisplayName)!")
                             .font(.headline)
                             .foregroundColor(.secondary)
                     }
@@ -173,7 +187,24 @@ struct MainAppView: View {
                 .padding(.horizontal)
                 .padding(.bottom, 20)
             }
-            .navigationBarHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        Task {
+                            try? await authService.signOut()
+                        }
+                    }) {
+                        HStack(spacing: 4) {
+                            Image(systemName: "rectangle.portrait.and.arrow.right")
+                                .font(.system(size: 16, weight: .medium))
+                            Text("Sign Out")
+                                .font(.system(size: 16, weight: .medium))
+                        }
+                        .foregroundColor(.red)
+                    }
+                }
+            }
             .onAppear {
                 permissionService.checkPermissions()
             }

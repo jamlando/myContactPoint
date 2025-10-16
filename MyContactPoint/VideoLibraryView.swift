@@ -13,7 +13,7 @@ import UIKit
 
 struct VideoLibraryView: View {
     @StateObject private var uploadService = VideoUploadService()
-    @EnvironmentObject var authService: AuthService
+    @EnvironmentObject var authService: FirebaseAuthService
     @State private var videos: [SwingVideo] = []
     @State private var isLoading = false
     @State private var errorMessage: String?
@@ -110,7 +110,8 @@ struct VideoLibraryView: View {
     }
     
     private func loadVideos() {
-        guard let userId = authService.currentUser?.id else {
+        guard let userIdString = authService.currentUser?.uid,
+              let userId = UUID(uuidString: userIdString) else {
             errorMessage = "Please sign in to view your videos"
             return
         }
@@ -135,7 +136,8 @@ struct VideoLibraryView: View {
     }
     
     private func deleteVideo(_ video: SwingVideo) {
-        guard let userId = authService.currentUser?.id else { return }
+        guard let userIdString = authService.currentUser?.uid,
+              let userId = UUID(uuidString: userIdString) else { return }
         
         Task {
             do {
@@ -492,5 +494,5 @@ struct DetailRow: View {
 
 #Preview {
     VideoLibraryView()
-        .environmentObject(AuthService())
+        .environmentObject(FirebaseAuthService())
 }

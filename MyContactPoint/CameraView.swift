@@ -16,7 +16,7 @@ struct CameraView: View {
     @StateObject private var cameraManager = CameraManager()
     @StateObject private var permissionService = CameraPermissionService()
     @StateObject private var uploadService = VideoUploadService()
-    @EnvironmentObject var authService: AuthService
+    @EnvironmentObject var authService: FirebaseAuthService
     @State private var showingPermissionAlert = false
     @State private var showingSettingsAlert = false
     @State private var isRecording = false
@@ -191,7 +191,7 @@ struct RecordingControlsView: View {
     let cameraManager: CameraManager
     @ObservedObject var permissionService: CameraPermissionService
     @ObservedObject var uploadService: VideoUploadService
-    @ObservedObject var authService: AuthService
+    @ObservedObject var authService: FirebaseAuthService
     @Binding var showingUploadAlert: Bool
     @Binding var uploadMessage: String
     @State private var timer: Timer?
@@ -305,7 +305,8 @@ struct RecordingControlsView: View {
     }
     
     private func uploadVideo() async {
-        guard let userId = authService.currentUser?.id else {
+        guard let userIdString = authService.currentUser?.uid,
+              let userId = UUID(uuidString: userIdString) else {
             uploadMessage = "Please sign in to upload videos"
             showingUploadAlert = true
             return
@@ -405,11 +406,12 @@ class CameraManager: NSObject, ObservableObject {
         videoOutput.stopRecording()
     }
     
-    func uploadLastRecordedVideo(uploadService: VideoUploadService, authService: AuthService) async {
+    func uploadLastRecordedVideo(uploadService: VideoUploadService, authService: FirebaseAuthService) async {
         guard let videoURL = lastRecordedVideoURL else { return }
         
         await MainActor.run {
-            guard let userId = authService.currentUser?.id else { return }
+            guard let userIdString = authService.currentUser?.uid,
+                  let userId = UUID(uuidString: userIdString) else { return }
             
             Task {
                 do {

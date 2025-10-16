@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import os.log
 
 struct AuthenticationView: View {
-    @EnvironmentObject var authService: AuthService
+    @EnvironmentObject var authService: FirebaseAuthService
     @Binding var isSignUpMode: Bool
     @Binding var showAuthentication: Bool
     @State private var email = ""
@@ -105,21 +106,48 @@ struct AuthenticationView: View {
                     }
                     
                     // Action Button
-                    Button(action: handleAuthentication) {
+                    Button(action: {
+                        print("🔘 Button action called!")
+                        os_log("🔘 Button action called!", log: .default, type: .info)
+                        handleAuthentication()
+                    }) {
                         HStack {
                             if authService.isLoading {
                                 ProgressView()
                                     .scaleEffect(0.8)
+                                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
                             }
                             Text(isSignUpMode ? "Sign Up" : "Sign In")
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
+                        .background(authService.isLoading ? Color.gray : Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(8)
                     }
                     .disabled(authService.isLoading || !isFormValid)
+                    .onChange(of: authService.isLoading) { isLoading in
+                        print("🔄 isLoading changed: \(isLoading)")
+                        os_log("🔄 isLoading changed: %{public}@", log: .default, type: .info, String(isLoading))
+                    }
+                    .onChange(of: isFormValid) { isValid in
+                        print("✅ isFormValid changed: \(isValid)")
+                        os_log("✅ isFormValid changed: %{public}@", log: .default, type: .info, String(isValid))
+                    }
+                    .onChange(of: authService.isAuthenticated) { isAuthenticated in
+                        print("🔐 AuthenticationView: isAuthenticated changed: \(isAuthenticated)")
+                        os_log("🔐 AuthenticationView: isAuthenticated changed: %{public}@", log: .default, type: .info, String(isAuthenticated))
+                        if isAuthenticated {
+                            print("✅ AuthenticationView: User authenticated, closing authentication view")
+                            os_log("✅ AuthenticationView: User authenticated, closing authentication view", log: .default, type: .info)
+                            showAuthentication = false
+                        }
+                    }
+                    .onAppear {
+                        print("🔘 Button appeared - isLoading: \(authService.isLoading), isFormValid: \(isFormValid)")
+                        print("🔘 Button disabled: \(authService.isLoading || !isFormValid)")
+                        os_log("🔘 Button appeared - isLoading: %{public}@, isFormValid: %{public}@", log: .default, type: .info, String(authService.isLoading), String(isFormValid))
+                    }
                     
                     // Toggle Mode Button
                     Button(action: {
@@ -207,15 +235,20 @@ struct AuthenticationView: View {
     
     private func handleAuthentication() {
         print("🔘 handleAuthentication called - isSignUpMode: \(isSignUpMode)")
+        os_log("🔘 handleAuthentication called - isSignUpMode: %{public}@", log: .default, type: .info, String(isSignUpMode))
         print("📧 Email: \(email)")
         print("🔒 Password length: \(password.count)")
         print("🔄 isLoading: \(authService.isLoading)")
         print("✅ isFormValid: \(isFormValid)")
         
+        // Clear any previous errors
+        authService.clearError()
+        
         Task {
             do {
                 if isSignUpMode {
                     print("📝 Starting sign-up process...")
+                    os_log("📝 Starting sign-up process...", log: .default, type: .info)
                     try await authService.signUp(
                         email: email,
                         password: password,
@@ -223,14 +256,18 @@ struct AuthenticationView: View {
                     )
                 } else {
                     print("🔐 Starting sign-in process...")
+                    os_log("🔐 Starting sign-in process...", log: .default, type: .info)
                     try await authService.signIn(
                         email: email,
                         password: password
                     )
                 }
+                print("✅ Authentication completed successfully")
+                os_log("✅ Authentication completed successfully", log: .default, type: .info)
             } catch {
                 // Error is handled by AuthService and displayed in UI
                 print("❌ Authentication error: \(error)")
+                os_log("❌ Authentication error: %{public}@", log: .default, type: .error, error.localizedDescription)
             }
         }
     }
@@ -264,6 +301,6 @@ struct AuthenticationView: View {
 struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
         AuthenticationView(isSignUpMode: .constant(false), showAuthentication: .constant(true))
-            .environmentObject(AuthService())
+            .environmentObject(FirebaseAuthService())
     }
 }

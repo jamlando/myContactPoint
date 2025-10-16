@@ -11,7 +11,7 @@
 		1D6058930D05DD3D006BFB54 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058920D05DD3D006BFB54 /* ContentView.swift */; };
 		1D6058950D05DD3D006BFB54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D6058940D05DD3D006BFB54 /* Assets.xcassets */; };
 		1D6058980D05DD3D006BFB54 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D6058970D05DD3D006BFB54 /* Preview Assets.xcassets */; };
-		1D60589A0D05DD3D006BFB54 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058990D05DD3D006BFB54 /* AuthService.swift */; };
+		1D60589A0D05DD3D006BFB54 /* FirebaseAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D6058990D05DD3D006BFB54 /* FirebaseAuthService.swift */; };
 		1D60589C0D05DD3D006BFB54 /* CameraPermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60589B0D05DD3D006BFB54 /* CameraPermissionService.swift */; };
 		1D60589E0D05DD3D006BFB54 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60589D0D05DD3D006BFB54 /* CameraView.swift */; };
 		1D6058A00D05DD3D006BFB54 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D60589F0D05DD3D006BFB54 /* LogoView.swift */; };
@@ -29,7 +29,7 @@
 		1D6058920D05DD3D006BFB54 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1D6058940D05DD3D006BFB54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D6058970D05DD3D006BFB54 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		1D6058990D05DD3D006BFB54 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		1D6058990D05DD3D006BFB54 /* FirebaseAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthService.swift; sourceTree = "<group>"; };
 		1D60589B0D05DD3D006BFB54 /* CameraPermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionService.swift; sourceTree = "<group>"; };
 		1D60589D0D05DD3D006BFB54 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		1D60589F0D05DD3D006BFB54 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
