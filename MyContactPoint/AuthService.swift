@@ -102,10 +102,21 @@ class AuthService: ObservableObject {
             )
             
             self.currentUser = authResponse.user
-            self.isAuthenticated = true
             
-            // Update last login timestamp
-            await updateLastLogin(userId: authResponse.user.id)
+            // Ensure user profile exists before setting authenticated
+            let profileExists = await createUserProfileIfNeeded(user: authResponse.user)
+            
+            if profileExists {
+                self.isAuthenticated = true
+                // Update last login timestamp
+                await updateLastLogin(userId: authResponse.user.id)
+            } else {
+                // Profile creation failed, sign out the user
+                try await supabase.auth.signOut()
+                self.currentUser = nil
+                self.isAuthenticated = false
+                throw AuthError.profileCreationFailed
+            }
         } catch {
             self.errorMessage = error.localizedDescription
             throw error
