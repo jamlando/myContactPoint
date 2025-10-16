@@ -139,7 +139,11 @@ struct OnboardingHeaderView: View {
             .padding(.horizontal, 24)
             .padding(.top, 20)
             
-            LogoView(size: .large)
+            HStack {
+                Spacer()
+                LogoView(size: .large)
+                Spacer()
+            }
         }
         .padding(.bottom, 16)
     }
