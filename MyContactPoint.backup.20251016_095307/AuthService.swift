@@ -1,0 +1,298 @@
+//
+//  AuthService.swift
+//  MyContactPoint
+//
+//  Created by Taylor Larson on 9/25/25.
+//
+
+import Foundation
+import Supabase
+import SwiftUI
+
+@MainActor
+class AuthService: ObservableObject {
+    @Published var isAuthenticated = false
+    @Published var currentUser: User?
+    @Published var isLoading = false
+    @Published var errorMessage: String?
+    
+    private let supabase: SupabaseClient
+    
+    init() {
+        // Initialize Supabase client with environment configuration
+        // For production builds, use production Supabase URLs
+        let supabaseURL = URL(string: ProcessInfo.processInfo.environment["SUPABASE_URL"] ?? "https://ahackqogtyexcnkeekky.supabase.co")!
+        let supabaseKey = ProcessInfo.processInfo.environment["SUPABASE_ANON_KEY"] ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFoYWNrcW9ndHlleGNua2Vla2t5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg3Mzg3ODEsImV4cCI6MjA3NDMxNDc4MX0.MQaUymgnwdzaD6JabAcHvosYmLYobSouSYP3isV_RZQ"
+        
+        self.supabase = SupabaseClient(supabaseURL: supabaseURL, supabaseKey: supabaseKey)
+        
+        // Check for existing session on initialization
+        Task {
+            await checkCurrentSession()
+        }
+    }
+    
+    // MARK: - Session Management
+    
+    func checkCurrentSession() async {
+        do {
+            let session = try await supabase.auth.session
+            self.currentUser = session.user
+            self.isAuthenticated = true
+            await createUserProfileIfNeeded(user: session.user)
+        } catch {
+            print("Error checking current session: \(error)")
+            self.isAuthenticated = false
+            self.currentUser = nil
+        }
+    }
+    
+    // MARK: - Authentication Methods
+    
+    func signUp(email: String, password: String, fullName: String?) async throws {
+        isLoading = true
+        errorMessage = nil
+        
+        do {
+            let authResponse = try await supabase.auth.signUp(
+                email: email,
+                password: password,
+                data: fullName.map { ["full_name": .string($0)] }
+            )
+            
+            self.currentUser = authResponse.user
+            self.isAuthenticated = true
+            
+            // Create user profile in our custom users table
+            await createUserProfileIfNeeded(user: authResponse.user, fullName: fullName)
+        } catch {
+            self.errorMessage = error.localizedDescription
+            throw error
+        }
+        
+        isLoading = false
+    }
+    
+    func signIn(email: String, password: String) async throws {
+        isLoading = true
+        errorMessage = nil
+        
+        do {
+            let authResponse = try await supabase.auth.signIn(
+                email: email,
+                password: password
+            )
+            
+            self.currentUser = authResponse.user
+            self.isAuthenticated = true
+            
+            // Update last login timestamp
+            await updateLastLogin(userId: authResponse.user.id)
+        } catch {
+            self.errorMessage = error.localizedDescription
+            throw error
+        }
+        
+        isLoading = false
+    }
+    
+    func signOut() async throws {
+        isLoading = true
+        errorMessage = nil
+        
+        do {
+            try await supabase.auth.signOut()
+            self.currentUser = nil
+            self.isAuthenticated = false
+        } catch {
+            self.errorMessage = error.localizedDescription
+            throw error
+        }
+        
+        isLoading = false
+    }
+    
+    func resetPassword(email: String) async throws {
+        isLoading = true
+        errorMessage = nil
+        
+        do {
+            try await supabase.auth.resetPasswordForEmail(email)
+        } catch {
+            self.errorMessage = error.localizedDescription
+            throw error
+        }
+        
+        isLoading = false
+    }
+    
+    // MARK: - User Profile Management
+    
+    private func createUserProfileIfNeeded(user: User, fullName: String? = nil) async {
+        do {
+            // Check if user profile already exists
+            let _ = try await supabase
+                .from("users")
+                .select("id")
+                .eq("id", value: user.id)
+                .single()
+                .execute()
+            
+            // Profile already exists, no need to create
+            return
+            
+        } catch {
+            // Profile doesn't exist, create it
+            print("User profile doesn't exist, creating new profile for user: \(user.id)")
+            do {
+                let userProfile = UserProfile(
+                    id: user.id,
+                    email: user.email ?? "",
+                    fullName: fullName ?? (user.userMetadata["full_name"]?.stringValue),
+                    createdAt: Date(),
+                    updatedAt: Date(),
+                    lastLogin: Date(),
+                    subscriptionTier: .free,
+                    subscriptionExpiresAt: nil,
+                    isActive: true
+                )
+                
+                try await supabase
+                    .from("users")
+                    .insert(userProfile)
+                    .execute()
+                
+                // Create default user preferences
+                let userPreferences = UserPreferences(
+                    id: UUID(),
+                    userId: user.id,
+                    tutorialCompleted: false,
+                    languagePreference: "en",
+                    analysisDepth: "basic",
+                    notificationsEnabled: true,
+                    privacyMode: false,
+                    createdAt: Date(),
+                    updatedAt: Date()
+                )
+                
+                try await supabase
+                    .from("user_preferences")
+                    .insert(userPreferences)
+                    .execute()
+                
+                print("Successfully created user profile and preferences for user: \(user.id)")
+                
+            } catch {
+                print("Error creating user profile: \(error)")
+                print("Error details: \(error.localizedDescription)")
+                print("User ID: \(user.id)")
+                print("User email: \(user.email ?? "nil")")
+                self.errorMessage = "Failed to create user profile: \(error.localizedDescription)"
+            }
+        }
+    }
+    
+    private func updateLastLogin(userId: UUID) async {
+        do {
+            try await supabase
+                .from("users")
+                .update(["last_login": Date().iso8601String])
+                .eq("id", value: userId)
+                .execute()
+        } catch {
+            print("Error updating last login: \(error)")
+        }
+    }
+    
+    // MARK: - Validation Methods
+    
+    func validateEmail(_ email: String) -> Bool {
+        let emailRegex = "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$"
+        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        return emailPredicate.evaluate(with: email)
+    }
+    
+    func validatePassword(_ password: String) -> (isValid: Bool, message: String?) {
+        if password.count < 6 {
+            return (false, "Password must be at least 6 characters long")
+        }
+        
+        // Check for at least one letter and one number
+        let hasLetter = password.rangeOfCharacter(from: .letters) != nil
+        let hasNumber = password.rangeOfCharacter(from: .decimalDigits) != nil
+        
+        if !hasLetter || !hasNumber {
+            return (false, "Password must contain at least one letter and one number")
+        }
+        
+        return (true, nil)
+    }
+    
+    func clearError() {
+        errorMessage = nil
+    }
+}
+
+// MARK: - Data Models
+
+struct UserProfile: Codable {
+    let id: UUID
+    let email: String
+    let fullName: String?
+    let createdAt: Date
+    let updatedAt: Date
+    let lastLogin: Date?
+    let subscriptionTier: SubscriptionTier
+    let subscriptionExpiresAt: Date?
+    let isActive: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case email
+        case fullName = "full_name"
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+        case lastLogin = "last_login"
+        case subscriptionTier = "subscription_tier"
+        case subscriptionExpiresAt = "subscription_expires_at"
+        case isActive = "is_active"
+    }
+}
+
+struct UserPreferences: Codable {
+    let id: UUID
+    let userId: UUID
+    let tutorialCompleted: Bool
+    let languagePreference: String
+    let analysisDepth: String
+    let notificationsEnabled: Bool
+    let privacyMode: Bool
+    let createdAt: Date
+    let updatedAt: Date
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case userId = "user_id"
+        case tutorialCompleted = "tutorial_completed"
+        case languagePreference = "language_preference"
+        case analysisDepth = "analysis_depth"
+        case notificationsEnabled = "notifications_enabled"
+        case privacyMode = "privacy_mode"
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+    }
+}
+
+enum SubscriptionTier: String, Codable, CaseIterable {
+    case free = "free"
+    case premium = "premium"
+}
+
+// MARK: - Extensions
+
+extension Date {
+    var iso8601String: String {
+        let formatter = ISO8601DateFormatter()
+        return formatter.string(from: self)
+    }
+}
