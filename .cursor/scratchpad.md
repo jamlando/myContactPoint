@@ -576,23 +576,25 @@
 
 **PRODUCTION READINESS**: ✅ **READY FOR PRODUCTION** with minor configuration fixes
 
-**CURRENT TASK**: AUTHENTICATION ERROR DISPLAY FIX - Completed Successfully
+**CURRENT TASK**: SIGN-UP AUTHENTICATION FLOW FIX - Completed Successfully
 
 **EXECUTOR STATUS**: 
-✅ **AUTHENTICATION ERROR DISPLAY ISSUE FIXED**
+✅ **SIGN-UP AUTHENTICATION FLOW ISSUE FIXED**
 
-**AUTHENTICATION ERROR DISPLAY ISSUE FIXED** ✅
+**SIGN-UP AUTHENTICATION FLOW ISSUE FIXED** ✅
 
 **ROOT CAUSE ANALYSIS**:
-🚨 **Issue Identified**: Stale error messages were persisting in the authentication UI without user input
-- Error message "Failed to create user profile: insert or update on table "users" violates foreign key constraint "users_id_fkey"" was displaying on sign-up page even without any user interaction
-- The error message was only cleared when users toggled between sign-up and sign-in modes
-- No error clearing mechanism existed when users started typing or when the view appeared
+🚨 **Issue Identified**: "User already registered" error during sign-up attempts
+- User was getting "user already registered" error when trying to sign up with existing email
+- AuthService was not properly handling Supabase Auth errors for existing users
+- No specific error handling for duplicate user creation scenarios
+- Generic error messages were not user-friendly
 
 **SOLUTION IMPLEMENTED**:
-✅ **Added Error Clearing on User Interaction**: Added `.onChange` modifiers to all form fields (Full Name, Email, Password, Confirm Password) to clear error messages when users start typing
-✅ **Added Error Clearing on View Appearance**: Added `.onAppear` modifier to clear any stale error messages when the authentication view appears
-✅ **Improved User Experience**: Users now see a clean form without confusing error messages from previous attempts
+✅ **Enhanced Error Handling**: Added specific error handling for "User already registered" scenarios in AuthService.signUp method
+✅ **User-Friendly Error Messages**: Created AuthError.userAlreadyExists with clear message "An account with this email already exists. Please sign in instead."
+✅ **Improved Error Detection**: Added error message checking for "User already registered" text in Supabase Auth responses
+✅ **Better User Experience**: Users now get clear guidance when trying to sign up with existing email addresses
 
 **ISSUE 1: Navigation State Problem** ✅ FIXED
 **Problem**: In `ContentView.swift`, the condition `showAuthentication || (!authService.isAuthenticated && !showTutorial)` meant that if `showAuthentication` was `true`, it would ALWAYS show the `AuthenticationView`, even if the user was authenticated.
@@ -611,18 +613,19 @@
 - Successfully reset database with corrected policies
 
 **TECHNICAL FIXES IMPLEMENTED**:
-✅ **AuthenticationView.swift**: Added `.onChange` modifiers to all form fields to clear error messages on user input
-✅ **AuthenticationView.swift**: Added `.onAppear` modifier to clear stale error messages when view appears
-✅ **Build Verification**: Project builds successfully with all fixes
-✅ **User Experience**: Clean authentication form without confusing error messages
+✅ **AuthService.swift**: Added specific error handling for "User already registered" scenarios in signUp method
+✅ **AuthService.swift**: Created AuthError enum with userAlreadyExists case and user-friendly error messages
+✅ **AuthService.swift**: Added error message detection for Supabase Auth duplicate user responses
+✅ **Build Verification**: Project builds successfully with improved error handling
+✅ **User Experience**: Clear error messages guide users to sign in instead of sign up when account exists
 
 **CURRENT STATUS**:
-✅ **Error Display**: Fixed - stale error messages no longer appear without user input
-✅ **User Experience**: Improved - clean authentication form with proper error clearing
-✅ **Form Interaction**: Enhanced - error messages clear when users start typing
-✅ **View Lifecycle**: Optimized - error messages clear when authentication view appears
-✅ **Build System**: Working - project compiles successfully with all fixes
-✅ **Ready for Testing**: Authentication form now provides clean user experience
+✅ **Error Handling**: Fixed - "User already registered" errors now handled gracefully
+✅ **User Experience**: Improved - clear error messages guide users to appropriate actions
+✅ **Error Messages**: Enhanced - user-friendly messages instead of technical Supabase errors
+✅ **Sign-up Flow**: Optimized - proper error detection and handling for duplicate users
+✅ **Build System**: Working - project compiles successfully with improved error handling
+✅ **Ready for Testing**: Sign-up flow now handles existing users appropriately
 
 **LATEST FIX - SIGN UP BUTTON SPINNING ISSUE** ✅ FIXED
 **Problem**: Sign up button was getting stuck in spinning state due to improper error handling in AuthService methods.

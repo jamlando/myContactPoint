@@ -79,8 +79,14 @@ class AuthService: ObservableObject {
                 throw AuthError.profileCreationFailed
             }
         } catch {
-            self.errorMessage = error.localizedDescription
-            throw error
+            // Handle specific Supabase auth errors
+            if error.localizedDescription.contains("User already registered") {
+                self.errorMessage = "An account with this email already exists. Please sign in instead."
+                throw AuthError.userAlreadyExists
+            } else {
+                self.errorMessage = error.localizedDescription
+                throw error
+            }
         }
     }
     
@@ -302,11 +308,17 @@ enum SubscriptionTier: String, Codable, CaseIterable {
 
 enum AuthError: LocalizedError {
     case profileCreationFailed
+    case userCreationFailed
+    case userAlreadyExists
     
     var errorDescription: String? {
         switch self {
         case .profileCreationFailed:
             return "Failed to create user profile. Please try again."
+        case .userCreationFailed:
+            return "Failed to create user account. Please try again."
+        case .userAlreadyExists:
+            return "An account with this email already exists. Please sign in instead."
         }
     }
 }
