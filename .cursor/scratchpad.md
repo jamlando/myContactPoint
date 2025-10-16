@@ -114,11 +114,18 @@
 
 ## Project Status Board
 
-### Current Sprint: Authentication, Video Recording, and TestFlight Preparation
-- [ ] **In Progress**: Authentication implementation with Supabase Auth
-- [ ] **Pending**: Video recording and camera integration
+### Current Sprint: Onboarding Flow UI/UX Improvements
+- [ ] **In Progress**: Onboarding header structure redesign
+- [ ] **Pending**: Navigation layout restructure (dot carousel positioning)
+- [ ] **Pending**: Content optimization (static title implementation)
+- [ ] **Pending**: Testing and validation of UX improvements
+
+### Previous Sprint: Authentication, Video Recording, and TestFlight Preparation
+- [x] **Completed**: Authentication implementation with Supabase Auth
+- [x] **Completed**: Video recording and camera integration
+- [x] **Completed**: Video library with thumbnails and metadata
+- [x] **Completed**: Build system fixes and local testing
 - [ ] **Pending**: TestFlight deployment configuration
-- [ ] **Pending**: Dependency updates and hardcoded value removal
 
 ### Completed Tasks
 - [x] PRD analysis and project understanding
@@ -131,9 +138,9 @@
 
 ## Current Status / Progress Tracking
 
-**Current Phase**: Authentication, Video Recording, and TestFlight Preparation - EXECUTOR MODE ACTIVE
-**Last Updated**: Task VIDEO.3 completed - Supabase Storage integration implemented
-**Next Milestone**: Ready to implement Video Library View (Task VIDEO.4)
+**Current Phase**: Onboarding Flow UI/UX Improvements - PLANNER MODE ACTIVE
+**Last Updated**: Comprehensive planning completed for onboarding improvements
+**Next Milestone**: Ready to implement header structure redesign (Task ONBOARD.1)
 
 **Current System Environment Status**:
 - macOS: 26.0.0 ✅ Current
@@ -144,6 +151,26 @@
 - Python: 3.13.7 ✅ Current
 - Git: 2.50.1 ✅ Current
 - CocoaPods: 1.16.2 ✅ Installed
+
+**Branch Status**:
+- ✅ **Current Branch**: `onboarding-ui-improvements` (created for focused development)
+- ✅ **Previous Branch**: `project-recreation-fix` (build fixes completed successfully)
+- ✅ **Main Branch**: `main` (stable with working build system)
+
+**Onboarding Improvement Status**:
+- ✅ **Planning Complete**: Comprehensive analysis and task breakdown completed
+- ✅ **User Feedback Analyzed**: All 5 requested changes documented and prioritized
+- ✅ **Technical Strategy Defined**: 3-phase implementation plan with clear success criteria
+- ✅ **Risk Assessment**: LOW risk UI-only changes, no breaking functionality
+- ❌ **Implementation**: Ready to begin with Task ONBOARD.1 (Create Static Header Component)
+
+**Previous Sprint Achievements**:
+- ✅ **Authentication system**: Fully implemented and working
+- ✅ **Video recording and upload**: Complete with Supabase integration
+- ✅ **Video library**: Working with thumbnails and metadata
+- ✅ **Build system**: Working correctly and tested locally
+- ✅ **Dependencies**: All updated and resolved
+- ✅ **Testing**: App launches successfully in iOS Simulator
 
 **Dependency Status Analysis**:
 - ✅ **Supabase Swift**: 2.32.0 (Latest stable)
@@ -509,7 +536,203 @@ ld: symbol(s) not found for architecture arm64:
 - Removed all duplicate projects and files
 - Project builds successfully (with minor dynamic library warning for SwiftUI previews)
 
-**CURRENT STATUS**: ✅ **BUILD SUCCESS!** Root project builds successfully - no project recreation needed
+## PLANNER ANALYSIS: Onboarding Flow UI/UX Improvements
+
+**Current Request**: Improve onboarding flow based on user feedback for better UX consistency and visual hierarchy
+
+**Branch**: `onboarding-ui-improvements` (created for focused development)
+
+### **User Feedback Analysis**
+
+**Requested Changes**:
+1. **Add Sign In text button** on top right of screen for each screen
+2. **Remove Sign In button** from last screen in favor of top-right text button consistency
+3. **Move dot carousel** above the "Sign up Now" button
+4. **Change title** from "Welcome to My Contact Point" to "My Contact Point"
+5. **Make "My Contact Point" static** for onboarding with only carousel content transitioning
+
+### **Current Onboarding Structure Analysis**
+
+**Current Implementation** (`OnboardingTutorialView.swift`):
+- ✅ **5 Tutorial Slides**: Welcome, How to Film, Understanding Analysis, Navigate Progress, Ready to Improve
+- ✅ **TabView with Page Style**: Smooth transitions between slides
+- ✅ **Custom Page Indicators**: Dot carousel at bottom
+- ✅ **Dual Button System**: "Sign up Now" + "Sign In" on last slide only
+- ✅ **Navigation Controls**: Previous/Next buttons
+- ✅ **Logo Integration**: LogoView displayed on each slide
+
+**Current Issues Identified**:
+1. **Inconsistent Sign In Access**: Only available on last slide
+2. **Poor Visual Hierarchy**: Dots below buttons disrupts flow
+3. **Redundant Title**: "Welcome to My Contact Point" vs "My Contact Point"
+4. **Static Content Repetition**: Title changes unnecessarily
+5. **Button Layout Inconsistency**: Different layouts per slide
+
+### **Design Improvement Strategy**
+
+**UX Consistency Goals**:
+- **Consistent Sign In Access**: Available on every screen via top-right text button
+- **Improved Visual Hierarchy**: Dots above primary action button
+- **Simplified Title Structure**: Static "My Contact Point" with dynamic content below
+- **Unified Button Layout**: Consistent primary action button placement
+- **Better Information Architecture**: Clear separation of static vs dynamic content
+
+**Technical Implementation Plan**:
+
+#### **Phase 1: Header Structure Redesign**
+- **Static Header**: "My Contact Point" title + Sign In text button (top-right)
+- **Dynamic Content Area**: Subtitle, image, and content that transitions
+- **Consistent Layout**: Same header structure across all slides
+
+#### **Phase 2: Navigation Layout Restructure**
+- **Dot Carousel**: Move above primary action button
+- **Primary Action Button**: Consistent "Sign up Now" placement
+- **Remove Secondary Button**: Eliminate "Sign In" button from last slide
+- **Navigation Controls**: Maintain Previous/Next functionality
+
+#### **Phase 3: Content Optimization**
+- **Title Simplification**: Change "Welcome to My Contact Point" to "My Contact Point"
+- **Content Refinement**: Ensure smooth transitions for dynamic content only
+- **Visual Balance**: Optimize spacing and alignment
+
+### **Success Criteria**
+
+**UX Improvements**:
+- ✅ Sign In accessible from every screen via consistent top-right text button
+- ✅ Dot carousel positioned above primary action button for better visual hierarchy
+- ✅ Static "My Contact Point" title with only dynamic content transitioning
+- ✅ Consistent button layout across all slides
+- ✅ Improved information architecture and visual flow
+
+**Technical Requirements**:
+- ✅ Maintain existing TabView functionality and smooth transitions
+- ✅ Preserve LogoView integration and branding
+- ✅ Keep responsive design for iOS/macOS compatibility
+- ✅ Maintain accessibility features and navigation controls
+- ✅ No breaking changes to existing onboarding flow logic
+
+### **Implementation Priority**
+
+**High Priority** (Core UX Issues):
+1. Add consistent Sign In text button to all screens
+2. Move dot carousel above primary action button
+3. Remove Sign In button from last screen
+
+**Medium Priority** (Content Optimization):
+4. Change title from "Welcome to My Contact Point" to "My Contact Point"
+5. Make "My Contact Point" static with only carousel content transitioning
+
+**Low Priority** (Polish):
+6. Fine-tune spacing and visual alignment
+7. Optimize transition animations for better UX
+
+**Estimated Implementation Time**: 2-3 hours
+**Risk Level**: LOW (UI-only changes, no breaking functionality)
+**Testing Requirements**: Manual testing of all 5 slides and navigation flows
+
+## Visual Wireframe: Onboarding Flow Improvements
+
+### **Current Layout (Issues)**
+```
+┌─────────────────────────────────────┐
+│ [Logo]                              │
+│ Welcome to My Contact Point         │ ← Changes every slide
+│ Improve your swing with MLB-level  │
+│ [Baseball Icon]                     │
+│ We'll help you analyze...           │
+│                                     │
+│ [Sign up Now] ← Button              │
+│ [Sign In] ← Only on last slide      │
+│                                     │
+│ ● ○ ○ ○ ○ ← Dots below buttons     │
+│                                     │
+│ [Previous]    [Next]                │
+└─────────────────────────────────────┘
+```
+
+### **Improved Layout (Target)**
+```
+┌─────────────────────────────────────┐
+│ My Contact Point          [Sign In] │ ← Static header
+│                                     │
+│ [Logo]                              │
+│ Improve your swing with MLB-level   │ ← Dynamic content
+│ [Baseball Icon]                     │
+│ We'll help you analyze...           │
+│                                     │
+│ ● ○ ○ ○ ○ ← Dots above button      │
+│                                     │
+│ [Sign up Now] ← Consistent button  │
+│                                     │
+│ [Previous]    [Next]                │
+└─────────────────────────────────────┘
+```
+
+### **Key Improvements**
+1. **Static Header**: "My Contact Point" + Sign In button (top-right) on all slides
+2. **Dynamic Content**: Only subtitle, icon, and content text transition
+3. **Better Hierarchy**: Dots positioned above primary action button
+4. **Consistent Layout**: Same button structure across all slides
+5. **Improved UX**: Sign In accessible from every screen
+
+## High-level Task Breakdown
+
+### Phase 1: Header Structure Redesign (Priority: HIGH)
+- [ ] **Task ONBOARD.1**: Create Static Header Component
+  - Success Criteria: Header with "My Contact Point" title and Sign In text button (top-right) on all slides
+- [ ] **Task ONBOARD.2**: Implement Sign In Text Button
+  - Success Criteria: Consistent Sign In text button accessible from every screen, navigates to sign in flow
+- [ ] **Task ONBOARD.3**: Restructure TutorialSlideView Layout
+  - Success Criteria: Static header with dynamic content area below, maintains LogoView integration
+
+### Phase 2: Navigation Layout Restructure (Priority: HIGH)
+- [ ] **Task ONBOARD.4**: Move Dot Carousel Above Primary Button
+  - Success Criteria: Dot carousel positioned above "Sign up Now" button for better visual hierarchy
+- [ ] **Task ONBOARD.5**: Remove Sign In Button from Last Screen
+  - Success Criteria: Eliminate secondary "Sign In" button from last slide, maintain consistent layout
+- [ ] **Task ONBOARD.6**: Standardize Button Layout
+  - Success Criteria: Consistent "Sign up Now" button placement across all slides
+
+### Phase 3: Content Optimization (Priority: MEDIUM)
+- [ ] **Task ONBOARD.7**: Update Title Text
+  - Success Criteria: Change "Welcome to My Contact Point" to "My Contact Point" in first slide
+- [ ] **Task ONBOARD.8**: Implement Static Title with Dynamic Content
+  - Success Criteria: "My Contact Point" remains static, only subtitle/content transitions between slides
+- [ ] **Task ONBOARD.9**: Optimize Visual Spacing and Alignment
+  - Success Criteria: Improved visual balance and consistent spacing throughout onboarding flow
+
+### Phase 4: Testing and Validation (Priority: HIGH)
+- [ ] **Task ONBOARD.10**: Test All Navigation Flows
+  - Success Criteria: All 5 slides display correctly, navigation works smoothly, Sign In accessible from all screens
+- [ ] **Task ONBOARD.11**: Validate UX Improvements
+  - Success Criteria: User confirms improved visual hierarchy and consistent button layout
+- [ ] **Task ONBOARD.12**: Cross-Platform Testing
+  - Success Criteria: Onboarding works correctly on both iOS and macOS platforms
+
+## Executor's Feedback or Assistance Requests
+
+**PLANNER MODE COMPLETE** - Onboarding Flow UI/UX Improvements Planning
+
+**COMPREHENSIVE PLANNING COMPLETED** ✅
+
+**PLANNING SUMMARY**:
+✅ **User Feedback Analyzed**: All 5 requested changes documented and prioritized
+✅ **Technical Strategy Defined**: 3-phase implementation plan with clear success criteria  
+✅ **Visual Wireframes Created**: Current vs improved layout comparison
+✅ **Task Breakdown Complete**: 12 specific tasks with measurable success criteria
+✅ **Risk Assessment**: LOW risk UI-only changes, no breaking functionality
+✅ **Branch Created**: `onboarding-ui-improvements` for focused development
+
+**READY FOR EXECUTOR MODE**:
+The planning phase is complete. The Executor can now proceed with implementation starting with Task ONBOARD.1 (Create Static Header Component). All requirements are clearly documented with visual wireframes and specific success criteria.
+
+**NEXT STEPS**:
+1. Switch to Executor mode
+2. Begin with Phase 1: Header Structure Redesign
+3. Implement Task ONBOARD.1: Create Static Header Component
+4. Test and validate each phase before proceeding
+
+**ESTIMATED COMPLETION**: 2-3 hours for full implementation and testing
 
 **BUILD SUCCESS RESULTS**:
 - ✅ **Root Project Works**: `MyContactPoint.xcodeproj` builds successfully
