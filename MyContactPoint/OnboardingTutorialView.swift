@@ -122,14 +122,21 @@ struct OnboardingHeaderView: View {
     
     var body: some View {
         VStack(spacing: 20) {
+            // Title row - centered
             HStack {
+                Spacer()
                 Text("My Contact Point")
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(.primary)
-                
                 Spacer()
-                
+            }
+            .padding(.horizontal, 24)
+            .padding(.top, 20)
+            
+            // Sign In button - positioned absolutely
+            HStack {
+                Spacer()
                 Button("Sign In") {
                     onSignInTapped()
                 }
@@ -137,8 +144,8 @@ struct OnboardingHeaderView: View {
                 .foregroundColor(.blue)
             }
             .padding(.horizontal, 24)
-            .padding(.top, 20)
             
+            // Logo row - centered
             HStack {
                 Spacer()
                 LogoView(size: .large)
