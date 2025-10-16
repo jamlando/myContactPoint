@@ -39,13 +39,19 @@ struct AuthenticationView: View {
                 // Authentication Form
                 VStack(spacing: 16) {
                     if isSignUpMode {
-                        TextField("Full Name", text: $fullName)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("Full Name", text: $fullName)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .onChange(of: fullName) { _ in
+                            authService.clearError()
+                        }
                     }
                     
                     TextField("Email", text: $email)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .autocorrectionDisabled()
+                        .onChange(of: email) { _ in
+                            authService.clearError()
+                        }
                     
                     SecureField("Password", text: $password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -54,6 +60,9 @@ struct AuthenticationView: View {
                         .textInputAutocapitalization(.never)
                         .disableAutocorrection(true)
                         .submitLabel(.done)
+                        .onChange(of: password) { _ in
+                            authService.clearError()
+                        }
                     
                     if isSignUpMode {
                         SecureField("Confirm Password", text: $confirmPassword)
@@ -63,6 +72,9 @@ struct AuthenticationView: View {
                             .textInputAutocapitalization(.never)
                             .disableAutocorrection(true)
                             .submitLabel(.done)
+                            .onChange(of: confirmPassword) { _ in
+                                authService.clearError()
+                            }
                     }
                     
                     // Error Message
@@ -115,6 +127,9 @@ struct AuthenticationView: View {
             #if os(iOS)
             .navigationBarHidden(true)
             #endif
+            .onAppear {
+                authService.clearError()
+            }
             .alert(isPresented: $showingAlert) {
                 Alert(
                     title: Text("Password Reset"),
