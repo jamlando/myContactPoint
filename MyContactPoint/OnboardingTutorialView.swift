@@ -14,7 +14,7 @@ struct OnboardingTutorialView: View {
     
     private let slides = [
         TutorialSlide(
-            title: "Welcome",
+            title: "My Contact Point",
             subtitle: "Improve your swing with MLB-level analysis",
             content: "We'll help you analyze your baseball swing using advanced biomechanical data and compare it to MLB averages.",
             imageName: "figure.baseball"
