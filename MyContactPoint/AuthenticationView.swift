@@ -122,6 +122,14 @@ struct AuthenticationView: View {
                     .disabled(authService.isLoading || !isFormValid)
                     .onTapGesture {
                         print("🔘 Button tapped - isLoading: \(authService.isLoading), isFormValid: \(isFormValid)")
+                        print("📧 Email: '\(email)', Password length: \(password.count)")
+                        print("📝 Full name: '\(fullName)', Confirm password length: \(confirmPassword.count)")
+                        print("🔍 Email valid: \(authService.validateEmail(email))")
+                        if isSignUpMode {
+                            let passwordValidation = authService.validatePassword(password)
+                            print("🔒 Password valid: \(passwordValidation.isValid)")
+                            print("🔒 Password match: \(password == confirmPassword)")
+                        }
                     }
                     
                     // Toggle Mode Button
@@ -165,16 +173,44 @@ struct AuthenticationView: View {
     // MARK: - Computed Properties
     
     private var isFormValid: Bool {
-        guard !email.isEmpty && !password.isEmpty else { return false }
-        guard authService.validateEmail(email) else { return false }
+        let emailEmpty = email.isEmpty
+        let passwordEmpty = password.isEmpty
+        let emailValid = authService.validateEmail(email)
         
-        if isSignUpMode {
-            guard !fullName.isEmpty && !confirmPassword.isEmpty else { return false }
-            guard password == confirmPassword else { return false }
-            let passwordValidation = authService.validatePassword(password)
-            return passwordValidation.isValid
+        print("🔍 Form validation - Email empty: \(emailEmpty), Password empty: \(passwordEmpty), Email valid: \(emailValid)")
+        
+        guard !emailEmpty && !passwordEmpty else { 
+            print("❌ Form invalid: Email or password empty")
+            return false 
+        }
+        guard emailValid else { 
+            print("❌ Form invalid: Email format invalid")
+            return false 
         }
         
+        if isSignUpMode {
+            let fullNameEmpty = fullName.isEmpty
+            let confirmPasswordEmpty = confirmPassword.isEmpty
+            let passwordMatch = password == confirmPassword
+            let passwordValidation = authService.validatePassword(password)
+            
+            print("📝 Sign-up validation - Full name empty: \(fullNameEmpty), Confirm password empty: \(confirmPasswordEmpty), Password match: \(passwordMatch), Password valid: \(passwordValidation.isValid)")
+            
+            guard !fullNameEmpty && !confirmPasswordEmpty else { 
+                print("❌ Sign-up invalid: Full name or confirm password empty")
+                return false 
+            }
+            guard passwordMatch else { 
+                print("❌ Sign-up invalid: Passwords don't match")
+                return false 
+            }
+            guard passwordValidation.isValid else { 
+                print("❌ Sign-up invalid: Password validation failed")
+                return false 
+            }
+        }
+        
+        print("✅ Form is valid")
         return true
     }
     
