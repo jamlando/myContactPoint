@@ -8,6 +8,27 @@
 import SwiftUI
 import os.log
 
+// MARK: - Security Extensions
+
+extension String {
+    /// Masks email addresses for secure logging
+    var maskedEmail: String {
+        guard self.contains("@") else { return "***" }
+        let components = self.components(separatedBy: "@")
+        guard components.count == 2 else { return "***" }
+        
+        let username = components[0]
+        let domain = components[1]
+        
+        // Mask username: show first 2 chars, mask the rest
+        let maskedUsername = username.count > 2 ? 
+            String(username.prefix(2)) + String(repeating: "*", count: username.count - 2) : 
+            String(repeating: "*", count: username.count)
+        
+        return "\(maskedUsername)@\(domain)"
+    }
+}
+
 struct AuthenticationView: View {
     @EnvironmentObject var authService: FirebaseAuthService
     @Binding var isSignUpMode: Bool
@@ -236,7 +257,7 @@ struct AuthenticationView: View {
     private func handleAuthentication() {
         print("🔘 handleAuthentication called - isSignUpMode: \(isSignUpMode)")
         os_log("🔘 handleAuthentication called - isSignUpMode: %{public}@", log: .default, type: .info, String(isSignUpMode))
-        print("📧 Email: \(email)")
+        print("📧 Email: \(email.maskedEmail)")
         print("🔒 Password length: \(password.count)")
         print("🔄 isLoading: \(authService.isLoading)")
         print("✅ isFormValid: \(isFormValid)")
@@ -283,7 +304,7 @@ struct AuthenticationView: View {
                 try await authService.resetPassword(email: email)
                 showingAlert = true
             } catch {
-                print("Password reset error: \(error)")
+                print("Password reset error: \(error.localizedDescription)")
             }
         }
     }

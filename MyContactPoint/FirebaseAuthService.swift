@@ -11,6 +11,27 @@ import Foundation
 import SwiftUI
 import os.log
 
+// MARK: - Security Extensions
+
+extension String {
+    /// Masks email addresses for secure logging
+    var maskedEmail: String {
+        guard self.contains("@") else { return "***" }
+        let components = self.components(separatedBy: "@")
+        guard components.count == 2 else { return "***" }
+        
+        let username = components[0]
+        let domain = components[1]
+        
+        // Mask username: show first 2 chars, mask the rest
+        let maskedUsername = username.count > 2 ? 
+            String(username.prefix(2)) + String(repeating: "*", count: username.count - 2) : 
+            String(repeating: "*", count: username.count)
+        
+        return "\(maskedUsername)@\(domain)"
+    }
+}
+
 // MARK: - Mock Firebase Types for Development
 struct MockUser {
     let uid: String
@@ -60,8 +81,8 @@ class MockAuth {
         try await Task.sleep(nanoseconds: 1_000_000_000) // 1 second
         
         let normalizedEmail = email.lowercased()
-        print("🔍 MockAuth.createUser called with email: \(email) -> normalized: \(normalizedEmail)")
-        os_log("🔍 MockAuth.createUser called with email: %{public}@ -> normalized: %{public}@", log: .default, type: .info, email, normalizedEmail)
+        print("🔍 MockAuth.createUser called with email: \(email.maskedEmail) -> normalized: \(normalizedEmail.maskedEmail)")
+        os_log("🔍 MockAuth.createUser called with email: %{public}@ -> normalized: %{public}@", log: .default, type: .info, email.maskedEmail, normalizedEmail.maskedEmail)
         
         // Mock validation - taylor.larson5@gmail.com already exists (case-insensitive)
         if normalizedEmail == "taylor.larson5@gmail.com" {
@@ -80,13 +101,13 @@ class MockAuth {
         try await Task.sleep(nanoseconds: 1_000_000_000) // 1 second
         
         let normalizedEmail = email.lowercased()
-        print("🔍 MockAuth.signIn called with email: \(email) -> normalized: \(normalizedEmail), password length: \(password.count)")
-        os_log("🔍 MockAuth.signIn called with email: %{public}@ -> normalized: %{public}@, password length: %{public}@", log: .default, type: .info, email, normalizedEmail, String(password.count))
+        print("🔍 MockAuth.signIn called with email: \(email.maskedEmail) -> normalized: \(normalizedEmail.maskedEmail), password length: \(password.count)")
+        os_log("🔍 MockAuth.signIn called with email: %{public}@ -> normalized: %{public}@, password length: %{public}@", log: .default, type: .info, email.maskedEmail, normalizedEmail.maskedEmail, String(password.count))
         
         // Mock validation - Allow sign-in for taylor.larson5@gmail.com (case-insensitive)
         if normalizedEmail == "taylor.larson5@gmail.com" && password == "password123" {
-            print("✅ MockAuth.signIn: Successful sign-in for taylor.larson5@gmail.com")
-            os_log("✅ MockAuth.signIn: Successful sign-in for taylor.larson5@gmail.com", log: .default, type: .info)
+            print("✅ MockAuth.signIn: Successful sign-in for \(normalizedEmail.maskedEmail)")
+            os_log("✅ MockAuth.signIn: Successful sign-in for %{public}@", log: .default, type: .info, normalizedEmail.maskedEmail)
             let user = MockUser(uid: "mock-user-taylor", email: email, displayName: "Taylor Larson")
             currentUser = user
             return user
@@ -96,13 +117,13 @@ class MockAuth {
             return user
         } else if normalizedEmail == "taylor.larson5@gmail.com" {
             // Wrong password for taylor.larson5@gmail.com
-            print("❌ MockAuth.signIn: Wrong password for taylor.larson5@gmail.com - throwing wrongPassword error")
-            os_log("❌ MockAuth.signIn: Wrong password for taylor.larson5@gmail.com - throwing wrongPassword error", log: .default, type: .error)
+            print("❌ MockAuth.signIn: Wrong password for \(normalizedEmail.maskedEmail) - throwing wrongPassword error")
+            os_log("❌ MockAuth.signIn: Wrong password for %{public}@ - throwing wrongPassword error", log: .default, type: .error, normalizedEmail.maskedEmail)
             throw MockAuthError(code: .wrongPassword)
         } else {
             // User not found
-            print("❌ MockAuth.signIn: User not found for email: \(normalizedEmail) - throwing userNotFound error")
-            os_log("❌ MockAuth.signIn: User not found for email: %{public}@ - throwing userNotFound error", log: .default, type: .error, normalizedEmail)
+            print("❌ MockAuth.signIn: User not found for email: \(normalizedEmail.maskedEmail) - throwing userNotFound error")
+            os_log("❌ MockAuth.signIn: User not found for email: %{public}@ - throwing userNotFound error", log: .default, type: .error, normalizedEmail.maskedEmail)
             throw MockAuthError(code: .userNotFound)
         }
     }
@@ -161,8 +182,8 @@ class FirebaseAuthService: ObservableObject {
         isLoading = true
         errorMessage = nil
         
-        print("📝 Starting Mock Firebase sign-up for email: \(email)")
-        os_log("📝 Starting Mock Firebase sign-up for email: %{public}@", log: .default, type: .info, email)
+        print("📝 Starting Mock Firebase sign-up for email: \(email.maskedEmail)")
+        os_log("📝 Starting Mock Firebase sign-up for email: %{public}@", log: .default, type: .info, email.maskedEmail)
         
         defer {
             isLoading = false
@@ -205,8 +226,8 @@ class FirebaseAuthService: ObservableObject {
         isLoading = true
         errorMessage = nil
         
-        print("🔐 Starting Mock Firebase sign-in for email: \(email)")
-        os_log("🔐 Starting Mock Firebase sign-in for email: %{public}@", log: .default, type: .info, email)
+        print("🔐 Starting Mock Firebase sign-in for email: \(email.maskedEmail)")
+        os_log("🔐 Starting Mock Firebase sign-in for email: %{public}@", log: .default, type: .info, email.maskedEmail)
         
         defer {
             isLoading = false
@@ -271,8 +292,8 @@ class FirebaseAuthService: ObservableObject {
         
         do {
             try await MockAuth.auth.sendPasswordReset(withEmail: email)
-            print("✅ Mock Firebase password reset email sent to: \(email)")
-            os_log("✅ Mock Firebase password reset email sent to: %{public}@", log: .default, type: .info, email)
+            print("✅ Mock Firebase password reset email sent to: \(email.maskedEmail)")
+            os_log("✅ Mock Firebase password reset email sent to: %{public}@", log: .default, type: .info, email.maskedEmail)
         } catch {
             self.errorMessage = error.localizedDescription
             throw error

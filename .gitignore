@@ -1,1 +1,66 @@
+# Environment variables and secrets
 .env
+.env.local
+.env.production
+.env.staging
+
+# Firebase configuration files with real keys
+GoogleService-Info.plist
+FirebaseService-Info.plist
+
+# Supabase configuration with real keys
+supabase/.env
+supabase/.env.local
+
+# API keys and secrets
+*.key
+*.pem
+*.p12
+*.mobileprovision
+
+# Backup files that may contain secrets
+*.backup*
+backup*/
+
+# Build artifacts
+build/
+DerivedData/
+*.xcarchive/
+*.ipa
+
+# Xcode user data
+*.xcuserstate
+*.xcuserdatad/
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Package manager
+Package.resolved
+Pods/
+Podfile.lock
+
+# Test results
+TestResults/
+*.testresult

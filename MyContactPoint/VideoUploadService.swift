@@ -21,12 +21,17 @@ class VideoUploadService: ObservableObject {
     private let supabase: SupabaseClient
     
     init() {
-        // Initialize Supabase client with environment configuration
-        // For production builds, use production Supabase URLs
-        let supabaseURL = URL(string: ProcessInfo.processInfo.environment["SUPABASE_URL"] ?? "https://ahackqogtyexcnkeekky.supabase.co")!
-        let supabaseKey = ProcessInfo.processInfo.environment["SUPABASE_ANON_KEY"] ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFoYWNrcW9ndHlleGNua2Vla2t5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg3Mzg3ODEsImV4cCI6MjA3NDMxNDc4MX0.MQaUymgnwdzaD6JabAcHvosYmLYobSouSYP3isV_RZQ"
+        // Initialize Supabase client with secure configuration
+        // All sensitive data loaded from environment variables via Config
+        let supabaseURL = URL(string: Config.supabaseURL)!
+        let supabaseKey = Config.supabaseAnonKey
         
         self.supabase = SupabaseClient(supabaseURL: supabaseURL, supabaseKey: supabaseKey)
+        
+        // Validate configuration on initialization
+        if !Config.validateConfiguration() {
+            print("❌ VideoUploadService: Invalid configuration detected")
+        }
     }
     
     // MARK: - Video Upload Methods
