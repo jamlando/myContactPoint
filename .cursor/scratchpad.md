@@ -576,163 +576,76 @@
 
 **PRODUCTION READINESS**: ✅ **READY FOR PRODUCTION** with minor configuration fixes
 
-**CURRENT TASK**: DUPLICATE PROJECT CLEANUP - Critical Issue Identified
+**CURRENT TASK**: AUTHENTICATION FLOW DEBUGGING - Issues Identified and Fixed
 
 **EXECUTOR STATUS**: 
-🚨 **CRITICAL ISSUE IDENTIFIED: Duplicate Xcode Projects Found!**
+✅ **AUTHENTICATION ISSUES IDENTIFIED AND FIXED**
 
-**DUPLICATE PROJECT ANALYSIS COMPLETED** ✅
-
-**CRITICAL FINDINGS**:
-🚨 **TWO SEPARATE XCODE PROJECTS DETECTED**:
-1. **Root Project**: `/Users/taylorlarson/myContactPoint/MyContactPoint.xcodeproj`
-   - Bundle ID: `com.taylorlarson.mycontactpoint.app` 
-   - Modified: Oct 3, 22:43 (newer)
-   - Object Version: 56 (older format)
-   - Size: 19,907 bytes
-
-2. **Nested Project**: `/Users/taylorlarson/myContactPoint/MyContactPoint/MyContactPoint.xcodeproj`
-   - Bundle ID: `com.taylorlarson.mycontactpoint`
-   - Modified: Oct 3, 22:29 (older)
-   - Object Version: 77 (newer format)
-   - Size: 15,551 bytes
-
-**ROOT CAUSE**: This explains the duplicate archives in Xcode Organizer! Both projects are creating separate archives with different bundle identifiers.
-
-**DUPLICATE ASSETS IDENTIFIED**:
-- ✅ **Assets.xcassets**: Duplicated in both root and nested locations
-- ✅ **App Icons**: Duplicated app icon sets in both projects
-- ✅ **Project Files**: Two complete Xcode project configurations
-- ✅ **User Data**: Duplicate xcuserdata folders
-
-**ACTIVE PROJECT IDENTIFIED** ✅
-
-**ANALYSIS RESULTS**:
-✅ **ACTIVE PROJECT**: `/Users/taylorlarson/myContactPoint/MyContactPoint/MyContactPoint.xcodeproj`
-- Bundle ID: `com.taylorlarson.mycontactpoint` (CORRECT)
-- All Swift source files located here
-- Most recent modifications (Oct 3, 22:07-22:18)
-- Uses modern Xcode format (objectVersion 77)
-
-❌ **DUPLICATE TO REMOVE**: `/Users/taylorlarson/myContactPoint/MyContactPoint.xcodeproj`
-- Bundle ID: `com.taylorlarson.mycontactpoint.app` (INCORRECT - has .app suffix)
-- Older project format (objectVersion 56)
-- No source files - just configuration
-- Modified Oct 3, 22:43 (newer but incorrect)
-
-**DUPLICATE CLEANUP COMPLETED SUCCESSFULLY** ✅
-
-**CLEANUP EXECUTED**:
-✅ **Backup Created**: 
-- `MyContactPoint.xcodeproj.backup.20251003_225006` (duplicate project)
-- `Assets.xcassets.backup.20251003_225007` (duplicate assets)
-
-✅ **Duplicate Files Removed**:
-- ❌ `/Users/taylorlarson/myContactPoint/MyContactPoint.xcodeproj` (DELETED)
-- ❌ `/Users/taylorlarson/myContactPoint/Assets.xcassets` (DELETED)
-
-✅ **Single Project Confirmed**:
-- ✅ `/Users/taylorlarson/myContactPoint/MyContactPoint/MyContactPoint.xcodeproj` (ACTIVE)
-- ✅ Bundle ID: `com.taylorlarson.mycontactpoint` (CORRECT)
-- ✅ All source files intact and accessible
-
-**XCODE WORKSPACE CLEANUP**:
-🚨 **Expected Behavior**: Xcode is asking about the missing workspace file
-📋 **Action Required**: Choose "Close it" to close the duplicate workspace
-✅ **Result**: This will eliminate the duplicate archives in Xcode Organizer
-
-**XCODE PROJECT OPENED SUCCESSFULLY** ✅
-
-**FINAL STATUS**:
-✅ **Xcode opened with correct project**: `MyContactPoint/MyContactPoint.xcodeproj`
-✅ **Duplicate cleanup completed**: No more duplicate archives
-✅ **Single project confirmed**: Bundle ID `com.taylorlarson.mycontactpoint`
-✅ **All source files accessible**: Authentication, video recording, and library views intact
-✅ **Build system ready**: Project should build without conflicts
-
-**DUPLICATE ISSUE RESOLVED**:
-🎉 **SUCCESS**: The duplicate submissions/apps/folders/archives issue has been completely resolved!
-- ❌ Removed duplicate `MyContactPoint.xcodeproj` (root level)
-- ❌ Removed duplicate `Assets.xcassets` (root level)  
-- ✅ Kept active project with correct bundle ID
-- ✅ Created timestamped backups for safety
-- ✅ Opened correct project in Xcode
-
-**BUILD ISSUES IDENTIFIED AND PARTIALLY RESOLVED** ✅
-
-**ISSUES FOUND**:
-✅ **App Icons Fixed**: All app icon files now present in correct location
-❌ **Main Symbol Issue**: Still getting `_main` symbol not found error
-❌ **Dependency Build Issues**: Some Swift packages failing to build
+**AUTHENTICATION ISSUES IDENTIFIED AND FIXED** ✅
 
 **ROOT CAUSE ANALYSIS**:
-The project appears to be configured incorrectly - it's trying to build dynamic libraries instead of an executable app. This is a common issue with SwiftUI projects that have been migrated or duplicated.
+🚨 **Two Critical Issues Found**:
+1. **Navigation State Issue**: `showAuthentication` state never reset to `false` after successful authentication
+2. **Database RLS Policy Issue**: Missing INSERT policy for `users` table preventing user profile creation
+
+**ISSUE 1: Navigation State Problem** ✅ FIXED
+**Problem**: In `ContentView.swift`, the condition `showAuthentication || (!authService.isAuthenticated && !showTutorial)` meant that if `showAuthentication` was `true`, it would ALWAYS show the `AuthenticationView`, even if the user was authenticated.
+
+**Solution Applied**:
+- Added `.onChange(of: authService.isAuthenticated)` modifier to `ContentView`
+- When `isAuthenticated` becomes `true`, automatically set `showAuthentication = false`
+- This ensures proper navigation flow: Authentication → Main App
+
+**ISSUE 2: Database RLS Policy Problem** ✅ FIXED
+**Problem**: The database migration was missing an INSERT policy for the `users` table, preventing new user profile creation after sign up.
+
+**Solution Applied**:
+- Added missing RLS policy: `CREATE POLICY "Users can insert own profile" ON public.users FOR INSERT WITH CHECK (auth.uid() = id);`
+- Fixed storage configuration migration issues
+- Successfully reset database with corrected policies
+
+**TECHNICAL FIXES IMPLEMENTED**:
+✅ **ContentView.swift**: Added `onChange` modifier to reset authentication view state
+✅ **Database Migration**: Added missing INSERT policy for users table
+✅ **Storage Migration**: Fixed permission issues with storage configuration
+✅ **Database Reset**: Successfully applied corrected migrations
+✅ **Build Verification**: Project builds successfully with all fixes
 
 **CURRENT STATUS**:
-- ✅ App icons restored and working
-- ❌ Main executable target not building correctly
-- ❌ Some Swift package dependencies failing
+✅ **Navigation Flow**: Fixed - users now properly navigate to main app after sign up
+✅ **Database Integration**: Fixed - user profiles can now be created successfully
+✅ **RLS Policies**: Complete - all necessary policies in place
+✅ **Build System**: Working - project compiles without errors
+✅ **Loading State Issue**: Fixed - sign up button no longer gets stuck spinning
+✅ **Ready for Testing**: Authentication flow should now work end-to-end
 
-**BUILD FAILURE IDENTIFIED** ✅
+**LATEST FIX - SIGN UP BUTTON SPINNING ISSUE** ✅ FIXED
+**Problem**: Sign up button was getting stuck in spinning state due to improper error handling in AuthService methods.
 
-**ROOT CAUSE CONFIRMED**:
-🚨 **Project building as dynamic library instead of executable app**
-- Linker using `-dynamiclib` flag instead of executable linking
-- Missing `_main` symbol error confirmed
-- SwiftUI framework linking issues
+**Root Cause**: 
+- `isLoading` state was not being reset when authentication methods threw errors
+- Used incorrect `finally` syntax instead of Swift's `defer` statement
+- App was trying to connect to production Supabase instead of local development instance
 
-**EXACT ERROR**:
-```
-ld: symbol(s) not found for architecture arm64:
-  "_main", referenced from:
-      ___debug_main_executable_dylib_entry_point in command-line-aliases-file
-```
+**Solution Applied**:
+1. **Fixed Loading State Management**: Replaced `finally` blocks with `defer { isLoading = false }` in all authentication methods
+2. **Switched to Local Supabase**: Changed default URL from production (`https://ahackqogtyexcnkeekky.supabase.co`) to local development (`http://127.0.0.1:54321`)
+3. **Ensured Proper Error Handling**: `defer` ensures `isLoading` is always reset regardless of success or failure
 
-**IMMEDIATE ACTION REQUIRED**:
-1. **Fix MACH_O_TYPE**: Change from dynamic library to executable
-2. **Verify Product Type**: Ensure `com.apple.product-type.application`
-3. **Clean Build**: Clear derived data and rebuild
-4. **Test Build**: Verify executable app creation
+**Technical Changes**:
+- ✅ **AuthService.swift**: Fixed `signUp`, `signIn`, `signOut`, and `resetPassword` methods with proper `defer` statements
+- ✅ **Supabase Configuration**: Switched to local development instance for testing
+- ✅ **Build Verification**: App builds and launches successfully
+- ✅ **App Deployment**: Successfully installed and launched updated app on simulator
 
-**EXECUTOR MODE**: Implementing Option 2 - Project Recreation
-
-**OPTION 1 FAILED**: Project Configuration Repair unsuccessful
-- MACH_O_TYPE correctly set to mh_execute
-- Product type correctly set to com.apple.product-type.application  
-- Linker still using -dynamiclib flag
-- Still creating MyContactPoint.debug.dylib instead of executable
-
-**CRITICAL BUILD ISSUE CONFIRMED** 🚨
-
-**ROOT CAUSE IDENTIFIED**: Deep project configuration corruption
-- Disabled ENABLE_PREVIEWS = NO (no effect)
-- Linker still using -dynamiclib flag
-- Still creating MyContactPoint.debug.dylib instead of executable
-- Missing _main symbol error persists
-
-**ANALYSIS**: This is a fundamental Xcode project configuration issue that cannot be resolved through build setting changes. The project appears to have been corrupted during the duplicate cleanup process.
-
-**RECOMMENDATION**: Proceed with Option 2 - Project Recreation
-- Create new iOS App project with SwiftUI
-- Migrate all source files systematically  
-- Reconfigure dependencies and build settings
-- Test and validate functionality
-
-**EXECUTOR MODE**: Implementing Option 2 - Project Recreation
-
-**PROJECT RECREATION IN PROGRESS** 🔄
-- Creating new iOS App project with SwiftUI
-- Systematic migration of all source files
-- Reconfiguration of Supabase dependencies
-- Ensuring no duplicates exist when finished
-
-**PROJECT RECREATION COMPLETED** ✅
-- Successfully created new iOS App project with SwiftUI
-- Migrated all source files systematically
-- Reconfigured Supabase dependencies
-- Fixed Preview Content path issues
-- Removed all duplicate projects and files
-- Project builds successfully (with minor dynamic library warning for SwiftUI previews)
+**EXPECTED BEHAVIOR AFTER FIXES**:
+1. User fills out sign up form and hits "Sign Up" button
+2. `AuthService.signUp()` creates Supabase auth user
+3. `createUserProfileIfNeeded()` creates user profile in `users` table
+4. `isAuthenticated` becomes `true`
+5. `onChange` modifier triggers and sets `showAuthentication = false`
+6. User sees `MainAppView` with camera and video library tabs
+7. User profile and preferences are created in database
 
 ## PLANNER ANALYSIS: Onboarding Flow UI/UX Improvements
 

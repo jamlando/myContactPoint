@@ -45,6 +45,12 @@ struct ContentView: View {
                 await authService.checkCurrentSession()
             }
         }
+        .onChange(of: authService.isAuthenticated) { isAuthenticated in
+            // Reset authentication view when user becomes authenticated
+            if isAuthenticated {
+                showAuthentication = false
+            }
+        }
     }
 }
 

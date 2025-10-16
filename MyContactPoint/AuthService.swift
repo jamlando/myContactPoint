@@ -20,8 +20,8 @@ class AuthService: ObservableObject {
     
     init() {
         // Initialize Supabase client with environment configuration
-        // For production builds, use production Supabase URLs
-        let supabaseURL = URL(string: ProcessInfo.processInfo.environment["SUPABASE_URL"] ?? "https://ahackqogtyexcnkeekky.supabase.co")!
+        // For local development, use local Supabase URLs
+        let supabaseURL = URL(string: ProcessInfo.processInfo.environment["SUPABASE_URL"] ?? "http://127.0.0.1:54321")!
         let supabaseKey = ProcessInfo.processInfo.environment["SUPABASE_ANON_KEY"] ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFoYWNrcW9ndHlleGNua2Vla2t5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg3Mzg3ODEsImV4cCI6MjA3NDMxNDc4MX0.MQaUymgnwdzaD6JabAcHvosYmLYobSouSYP3isV_RZQ"
         
         self.supabase = SupabaseClient(supabaseURL: supabaseURL, supabaseKey: supabaseKey)
@@ -52,6 +52,7 @@ class AuthService: ObservableObject {
     func signUp(email: String, password: String, fullName: String?) async throws {
         isLoading = true
         errorMessage = nil
+        defer { isLoading = false }
         
         do {
             let authResponse = try await supabase.auth.signUp(
@@ -69,13 +70,12 @@ class AuthService: ObservableObject {
             self.errorMessage = error.localizedDescription
             throw error
         }
-        
-        isLoading = false
     }
     
     func signIn(email: String, password: String) async throws {
         isLoading = true
         errorMessage = nil
+        defer { isLoading = false }
         
         do {
             let authResponse = try await supabase.auth.signIn(
@@ -92,13 +92,12 @@ class AuthService: ObservableObject {
             self.errorMessage = error.localizedDescription
             throw error
         }
-        
-        isLoading = false
     }
     
     func signOut() async throws {
         isLoading = true
         errorMessage = nil
+        defer { isLoading = false }
         
         do {
             try await supabase.auth.signOut()
@@ -108,13 +107,12 @@ class AuthService: ObservableObject {
             self.errorMessage = error.localizedDescription
             throw error
         }
-        
-        isLoading = false
     }
     
     func resetPassword(email: String) async throws {
         isLoading = true
         errorMessage = nil
+        defer { isLoading = false }
         
         do {
             try await supabase.auth.resetPasswordForEmail(email)
@@ -122,8 +120,6 @@ class AuthService: ObservableObject {
             self.errorMessage = error.localizedDescription
             throw error
         }
-        
-        isLoading = false
     }
     
     // MARK: - User Profile Management

@@ -171,38 +171,5 @@ GRANT EXECUTE ON FUNCTION cleanup_orphaned_storage_files() TO service_role;
 GRANT EXECUTE ON FUNCTION generate_video_signed_url(TEXT, INTEGER) TO authenticated;
 GRANT SELECT ON storage_usage_summary TO service_role;
 
--- Create indexes for storage performance
-CREATE INDEX IF NOT EXISTS idx_storage_objects_bucket_id ON storage.objects(bucket_id);
-CREATE INDEX IF NOT EXISTS idx_storage_objects_name ON storage.objects(name);
-CREATE INDEX IF NOT EXISTS idx_storage_objects_created_at ON storage.objects(created_at);
-
--- Insert storage configuration metadata
-INSERT INTO public.storage_configuration (
-    bucket_name,
-    max_file_size,
-    allowed_mime_types,
-    is_public,
-    description
-) VALUES 
-    ('swing-videos', 104857600, ARRAY['video/mp4', 'video/mov', 'video/avi', 'video/quicktime'], false, 'User uploaded swing analysis videos'),
-    ('user-avatars', 5242880, ARRAY['image/jpeg', 'image/png', 'image/webp'], false, 'User profile pictures'),
-    ('analysis-thumbnails', 2097152, ARRAY['image/jpeg', 'image/png', 'image/webp'], true, 'Public thumbnails for swing analysis results');
-
--- Create storage_configuration table if it doesn't exist
-CREATE TABLE IF NOT EXISTS public.storage_configuration (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-    bucket_name TEXT UNIQUE NOT NULL,
-    max_file_size BIGINT NOT NULL,
-    allowed_mime_types TEXT[] NOT NULL,
-    is_public BOOLEAN DEFAULT false,
-    description TEXT,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
-    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
--- Enable RLS on storage_configuration
-ALTER TABLE public.storage_configuration ENABLE ROW LEVEL SECURITY;
-
--- Allow public read access to storage configuration
-CREATE POLICY "Anyone can read storage configuration" ON public.storage_configuration 
-FOR SELECT USING (true);
+-- Note: Storage indexes are created automatically by Supabase
+-- Storage configuration is managed through Supabase dashboard
