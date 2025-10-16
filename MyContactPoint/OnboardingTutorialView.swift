@@ -74,45 +74,16 @@ struct OnboardingTutorialView: View {
                     }
                 }
 
-                // Primary action button (now below dots)
-                if currentSlide < slides.count - 1 {
-                    // Slides 1-4: "Sign up Now" button
-                    Button("Sign up Now") {
-                        // TODO: Navigate to sign up flow
-                        showTutorial = false
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(12)
-                } else {
-                    // Slide 5: Dual buttons "Sign up Now" and "Sign In"
-                    VStack(spacing: 12) {
-                        Button("Sign up Now") {
-                            // TODO: Navigate to sign up flow
-                            showTutorial = false
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-
-                        Button("Sign In") {
-                            // TODO: Navigate to sign in flow
-                            showTutorial = false
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding()
-                        .background(Color.clear)
-                        .foregroundColor(.blue)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 12)
-                                .stroke(Color.blue, lineWidth: 1)
-                        )
-                    }
+                // Primary action button (now below dots) - standardized across all slides
+                Button("Sign up Now") {
+                    // TODO: Navigate to sign up flow
+                    showTutorial = false
                 }
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(12)
 
                 // Navigation text (below buttons)
                 HStack {
