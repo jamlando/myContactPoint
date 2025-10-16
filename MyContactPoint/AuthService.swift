@@ -22,7 +22,7 @@ class AuthService: ObservableObject {
         // Initialize Supabase client with environment configuration
         // For local development, use local Supabase URLs
         let supabaseURL = URL(string: ProcessInfo.processInfo.environment["SUPABASE_URL"] ?? "http://127.0.0.1:54321")!
-        let supabaseKey = ProcessInfo.processInfo.environment["SUPABASE_ANON_KEY"] ?? "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFoYWNrcW9ndHlleGNua2Vla2t5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg3Mzg3ODEsImV4cCI6MjA3NDMxNDc4MX0.MQaUymgnwdzaD6JabAcHvosYmLYobSouSYP3isV_RZQ"
+        let supabaseKey = ProcessInfo.processInfo.environment["SUPABASE_ANON_KEY"] ?? "sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH"
         
         self.supabase = SupabaseClient(supabaseURL: supabaseURL, supabaseKey: supabaseKey)
         
