@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AuthenticationView: View {
     @EnvironmentObject var authService: AuthService
-    @State private var isSignUpMode = false
+    @Binding var isSignUpMode: Bool
     @State private var email = ""
     @State private var password = ""
     @State private var fullName = ""
@@ -49,10 +49,11 @@ struct AuthenticationView: View {
                     
                     SecureField("Password", text: $password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .textContentType(.newPassword)
+                        .textContentType(isSignUpMode ? .newPassword : .password)
                         .autocorrectionDisabled()
                         .textInputAutocapitalization(.never)
                         .disableAutocorrection(true)
+                        .submitLabel(.done)
                     
                     if isSignUpMode {
                         SecureField("Confirm Password", text: $confirmPassword)
@@ -61,6 +62,7 @@ struct AuthenticationView: View {
                             .autocorrectionDisabled()
                             .textInputAutocapitalization(.never)
                             .disableAutocorrection(true)
+                            .submitLabel(.done)
                     }
                     
                     // Error Message
@@ -191,7 +193,7 @@ struct AuthenticationView: View {
 
 struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticationView()
+        AuthenticationView(isSignUpMode: .constant(false))
             .environmentObject(AuthService())
     }
 }

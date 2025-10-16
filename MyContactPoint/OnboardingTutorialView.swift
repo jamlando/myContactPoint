@@ -11,6 +11,7 @@ struct OnboardingTutorialView: View {
     @Binding var showTutorial: Bool
     @State private var currentSlide = 0
     let onSignInTapped: () -> Void
+    let onSignUpTapped: () -> Void
     
     private let slides = [
         TutorialSlide(
@@ -72,8 +73,7 @@ struct OnboardingTutorialView: View {
 
                 // Primary action button (now below dots) - standardized across all slides
                 Button("Sign up Now") {
-                    // TODO: Navigate to sign up flow
-                    showTutorial = false
+                    onSignUpTapped()
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 16)
@@ -185,5 +185,5 @@ struct TutorialSlideView: View {
 }
 
 #Preview {
-    OnboardingTutorialView(showTutorial: .constant(true), onSignInTapped: {})
+    OnboardingTutorialView(showTutorial: .constant(true), onSignInTapped: {}, onSignUpTapped: {})
 }

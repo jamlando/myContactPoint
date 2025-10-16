@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var showSplash = true
     @State private var showTutorial = false
     @State private var showAuthentication = false
+    @State private var isSignUpMode = false
     
     var body: some View {
         Group {
@@ -22,11 +23,17 @@ struct ContentView: View {
                     showTutorial: $showTutorial,
                     onSignInTapped: {
                         showTutorial = false
+                        isSignUpMode = false
+                        showAuthentication = true
+                    },
+                    onSignUpTapped: {
+                        showTutorial = false
+                        isSignUpMode = true
                         showAuthentication = true
                     }
                 )
             } else if showAuthentication || (!authService.isAuthenticated && !showTutorial) {
-                AuthenticationView()
+                AuthenticationView(isSignUpMode: $isSignUpMode)
             } else if authService.isAuthenticated {
                 MainAppView()
             }
