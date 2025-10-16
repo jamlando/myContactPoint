@@ -56,6 +56,8 @@ class AuthService: ObservableObject {
         errorMessage = nil
         defer { isLoading = false }
         
+        print("📝 Starting sign-up for email: \(email)")
+        
         do {
             let authResponse = try await supabase.auth.signUp(
                 email: email,
@@ -63,15 +65,20 @@ class AuthService: ObservableObject {
                 data: fullName.map { ["full_name": .string($0)] }
             )
             
+            print("✅ Supabase sign-up successful for user: \(authResponse.user.id)")
             self.currentUser = authResponse.user
             
             // Create user profile in our custom users table
+            print("🔍 Creating user profile...")
             let profileCreated = await createUserProfileIfNeeded(user: authResponse.user, fullName: fullName)
+            print("📊 Profile created: \(profileCreated)")
             
             // Only set authenticated if profile creation succeeded
             if profileCreated {
                 self.isAuthenticated = true
+                print("✅ User authenticated successfully")
             } else {
+                print("❌ Profile creation failed, signing out user")
                 // Profile creation failed, sign out the user
                 try await supabase.auth.signOut()
                 self.currentUser = nil
@@ -79,6 +86,7 @@ class AuthService: ObservableObject {
                 throw AuthError.profileCreationFailed
             }
         } catch {
+            print("❌ Sign-up error: \(error)")
             // Handle specific Supabase auth errors
             if error.localizedDescription.contains("User already registered") {
                 self.errorMessage = "An account with this email already exists. Please sign in instead."
