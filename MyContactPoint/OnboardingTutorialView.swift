@@ -14,32 +14,27 @@ struct OnboardingTutorialView: View {
     
     private let slides = [
         TutorialSlide(
-            title: "My Contact Point",
             subtitle: "Improve your swing with MLB-level analysis",
             content: "We'll help you analyze your baseball swing using advanced biomechanical data and compare it to MLB averages.",
             imageName: "figure.baseball"
         ),
         TutorialSlide(
-            title: "How to Film Your Swing",
-            subtitle: "Get the best results",
+            subtitle: "How to Film Your Swing",
             content: "• Place camera 10-15 feet away\n• Film from the side view\n• Capture your full body motion\n• Slow motion is optional but helpful",
             imageName: "camera.fill"
         ),
         TutorialSlide(
-            title: "Understanding Your Analysis",
-            subtitle: "See how you compare to MLB players",
+            subtitle: "Understanding Your Analysis",
             content: "We analyze 40 data points across 5 swing phases to give you detailed feedback on your mechanics.",
             imageName: "chart.bar.fill"
         ),
         TutorialSlide(
-            title: "Navigate Your Progress",
-            subtitle: "Track your improvement over time",
+            subtitle: "Navigate Your Progress",
             content: "Use the upload button to add videos, view your library, and track your progress with detailed analytics.",
             imageName: "chart.line.uptrend.xyaxis"
         ),
         TutorialSlide(
-            title: "Ready to Improve Your Swing?",
-            subtitle: "Upload your first video to get started",
+            subtitle: "Ready to Improve Your Swing?",
             content: "Let's begin your journey to better hitting mechanics!",
             imageName: "play.circle.fill"
         )
@@ -146,7 +141,6 @@ struct OnboardingHeaderView: View {
 }
 
 struct TutorialSlide {
-    let title: String
     let subtitle: String
     let content: String
     let imageName: String
